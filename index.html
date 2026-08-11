@@ -1,0 +1,2448 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sevvi Clínica Integrada | Medicina Estética e Saúde em Campos dos Goytacazes, RJ</title>
+  <meta name="description" content="Clínica multidisciplinar em Campos dos Goytacazes com foco em emagrecimento clínico, saúde hormonal, nutrição e medicina funcional. Atendimento personalizado, acompanhamento real. Agende pelo WhatsApp." />
+  <meta name="robots" content="index, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" />
+  <style>
+    /* =============================================
+       RESET & BASE
+    ============================================= */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    /* =============================================
+       DESIGN TOKENS — SEVVI
+    ============================================= */
+    :root {
+      /* Paleta */
+      --bg-primary:   #FAFAF8;
+      --bg-secondary: #F3EDE5;
+      --bg-accent:    #EDE4D8;
+      --bg-dark:      #2C2922;
+
+      --text-primary:   #1E1B17;
+      --text-secondary: #6B6460;
+      --text-muted:     #9C9490;
+      --text-inverse:   #FAFAF8;
+
+      --accent-olive:   #6B7A5C;
+      --accent-dark:    #4A5540;
+      --accent-light:   #A8B89A;
+
+      --border-subtle:  #E8E0D6;
+      --border-medium:  #D4C8B8;
+
+      /* Tipografia */
+      --font-serif:  'Cormorant Garamond', Georgia, serif;
+      --font-sans:   'DM Sans', system-ui, sans-serif;
+
+      /* Escala tipográfica */
+      --text-xs:   0.75rem;
+      --text-sm:   0.875rem;
+      --text-base: 1rem;
+      --text-lg:   1.125rem;
+      --text-xl:   1.25rem;
+      --text-2xl:  1.5rem;
+      --text-3xl:  1.875rem;
+      --text-4xl:  2.25rem;
+      --text-5xl:  3rem;
+      --text-6xl:  3.75rem;
+      --text-7xl:  4.5rem;
+
+      /* Espaçamento */
+      --space-1:  0.25rem;
+      --space-2:  0.5rem;
+      --space-3:  0.75rem;
+      --space-4:  1rem;
+      --space-5:  1.25rem;
+      --space-6:  1.5rem;
+      --space-8:  2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --space-16: 4rem;
+      --space-20: 5rem;
+      --space-24: 6rem;
+      --space-32: 8rem;
+
+      /* Bordas */
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+
+      /* Sombras */
+      --shadow-sm: 0 1px 3px rgba(44, 41, 34, 0.06), 0 1px 2px rgba(44, 41, 34, 0.04);
+      --shadow-md: 0 4px 12px rgba(44, 41, 34, 0.08), 0 2px 4px rgba(44, 41, 34, 0.04);
+      --shadow-lg: 0 10px 30px rgba(44, 41, 34, 0.10);
+
+      /* Transições */
+      --transition: 0.25s ease;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* =============================================
+       UTILITÁRIOS
+    ============================================= */
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 var(--space-6);
+    }
+
+    .container--narrow {
+      max-width: 760px;
+    }
+
+    .serif {
+      font-family: var(--font-serif);
+    }
+
+    .eyebrow {
+      font-family: var(--font-sans);
+      font-size: var(--text-xs);
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-olive);
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-family: var(--font-sans);
+      font-size: var(--text-xs);
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-olive);
+      margin-bottom: var(--space-5);
+    }
+
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--accent-olive);
+      flex-shrink: 0;
+    }
+
+    /* =============================================
+       PLACEHOLDER DE IMAGEM
+    ============================================= */
+    .img-placeholder {
+      background: var(--bg-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: var(--space-2);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .img-placeholder__label {
+      font-family: var(--font-sans);
+      font-size: var(--text-xs);
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-align: center;
+      padding: var(--space-4);
+    }
+
+    .img-placeholder__icon {
+      width: 32px;
+      height: 32px;
+      color: var(--text-muted);
+      opacity: 0.5;
+    }
+
+    /* =============================================
+       BOTÕES
+    ============================================= */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      font-family: var(--font-sans);
+      font-size: var(--text-sm);
+      font-weight: 500;
+      line-height: 1;
+      border: none;
+      cursor: pointer;
+      transition: all var(--transition);
+      text-decoration: none;
+      border-radius: var(--radius-full);
+      white-space: nowrap;
+    }
+
+    .btn--primary {
+      background: var(--accent-olive);
+      color: #fff;
+      padding: var(--space-4) var(--space-8);
+      min-height: 52px;
+    }
+
+    .btn--primary:hover {
+      background: var(--accent-dark);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn--primary:active {
+      transform: translateY(0);
+    }
+
+    .btn--ghost {
+      background: transparent;
+      color: var(--text-secondary);
+      padding: var(--space-3) var(--space-5);
+      border: 1px solid var(--border-medium);
+      min-height: 44px;
+      font-size: var(--text-xs);
+      letter-spacing: 0.06em;
+    }
+
+    .btn--ghost:hover {
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+    }
+
+    .btn--large {
+      font-size: var(--text-base);
+      padding: var(--space-5) var(--space-10);
+      min-height: 60px;
+    }
+
+    .btn-icon {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+
+    /* =============================================
+       HEADER
+    ============================================= */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(250, 250, 248, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-subtle);
+      transition: background var(--transition);
+    }
+
+    .header__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+
+    .header__logo {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+    }
+
+    .header__logo-mark {
+      width: 36px;
+      height: 36px;
+      background: var(--accent-olive);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .header__logo-mark svg {
+      width: 20px;
+      height: 20px;
+      color: #fff;
+    }
+
+    .header__brand {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .header__brand-name {
+      font-family: var(--font-serif);
+      font-size: var(--text-xl);
+      font-weight: 600;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+
+    .header__brand-sub {
+      font-size: var(--text-xs);
+      font-weight: 400;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .header__cta {
+      font-size: var(--text-xs) !important;
+      padding: var(--space-3) var(--space-5) !important;
+      min-height: 40px !important;
+    }
+
+    /* =============================================
+       HERO
+    ============================================= */
+    .hero {
+      padding-top: 68px;
+      min-height: 100svh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      background: var(--bg-primary);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 100% 60%, rgba(107, 122, 92, 0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero__content {
+      padding: var(--space-24) var(--space-6) var(--space-24) 0;
+      max-width: 560px;
+      margin-left: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-full);
+      padding: var(--space-2) var(--space-4);
+      margin-bottom: var(--space-8);
+    }
+
+    .hero__eyebrow-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--accent-olive);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .hero__eyebrow-text {
+      font-size: var(--text-xs);
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-olive);
+    }
+
+    .hero__headline {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 4.5vw, 3.5rem);
+      font-weight: 500;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      margin-bottom: var(--space-6);
+    }
+
+    .hero__headline em {
+      font-style: italic;
+      color: var(--accent-olive);
+    }
+
+    .hero__sub {
+      font-size: var(--text-lg);
+      font-weight: 400;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin-bottom: var(--space-10);
+      max-width: 480px;
+    }
+
+    .hero__ctas {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+      flex-wrap: wrap;
+      margin-bottom: var(--space-12);
+    }
+
+    .hero__credentials {
+      display: flex;
+      align-items: center;
+      gap: var(--space-6);
+      padding-top: var(--space-6);
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .hero__cred-item {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-1);
+    }
+
+    .hero__cred-label {
+      font-size: var(--text-xs);
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .hero__cred-value {
+      font-family: var(--font-serif);
+      font-size: var(--text-base);
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .hero__cred-divider {
+      width: 1px;
+      height: 32px;
+      background: var(--border-medium);
+      flex-shrink: 0;
+    }
+
+    .hero__visual {
+      height: 100%;
+      min-height: 100svh;
+      display: flex;
+      align-items: stretch;
+      padding: var(--space-6) var(--space-6) var(--space-6) var(--space-6);
+    }
+
+    .hero__image-wrap {
+      flex: 1;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      position: relative;
+      margin-top: 68px;
+      background: var(--bg-accent);
+      display: flex;
+      align-items: flex-end;
+      min-height: 500px;
+    }
+
+    .hero__image-placeholder {
+      width: 100%;
+      height: 100%;
+      min-height: 500px;
+      background: var(--bg-accent);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-3);
+    }
+
+    .hero__image-placeholder svg {
+      width: 48px;
+      height: 48px;
+      color: var(--accent-light);
+      opacity: 0.6;
+    }
+
+    .hero__image-placeholder-label {
+      font-size: var(--text-xs);
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .hero__badge {
+      position: absolute;
+      bottom: var(--space-6);
+      left: var(--space-6);
+      right: var(--space-6);
+      background: rgba(250, 250, 248, 0.94);
+      backdrop-filter: blur(8px);
+      border-radius: var(--radius-md);
+      padding: var(--space-4) var(--space-5);
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      box-shadow: var(--shadow-md);
+    }
+
+    .hero__badge-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--accent-olive);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .hero__badge-icon svg {
+      width: 18px;
+      height: 18px;
+      color: #fff;
+    }
+
+    .hero__badge-text {
+      flex: 1;
+    }
+
+    .hero__badge-title {
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.2;
+    }
+
+    .hero__badge-desc {
+      font-size: var(--text-xs);
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* =============================================
+       SEÇÃO — DOR / IDENTIFICAÇÃO
+    ============================================= */
+    .section-pain {
+      background: var(--bg-secondary);
+      padding: var(--space-24) 0;
+    }
+
+    .pain__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-16);
+      align-items: center;
+    }
+
+    .pain__content {}
+
+    .pain__headline {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 500;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      color: var(--text-primary);
+      margin-bottom: var(--space-8);
+    }
+
+    .pain__list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+    }
+
+    .pain__item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-4);
+      padding: var(--space-5);
+      background: var(--bg-primary);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-subtle);
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+
+    .pain__item:hover {
+      border-color: var(--border-medium);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .pain__item-check {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--bg-accent);
+      border: 1px solid var(--border-medium);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .pain__item-check svg {
+      width: 10px;
+      height: 10px;
+      color: var(--accent-olive);
+    }
+
+    .pain__item-text {
+      font-size: var(--text-base);
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    .pain__transition {
+      margin-top: var(--space-8);
+      padding-top: var(--space-6);
+      border-top: 1px solid var(--border-medium);
+      font-size: var(--text-base);
+      color: var(--text-secondary);
+      line-height: 1.7;
+      font-style: italic;
+      font-family: var(--font-serif);
+      font-size: var(--text-xl);
+    }
+
+    .pain__visual {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+    }
+
+    .pain__quote {
+      background: var(--bg-dark);
+      border-radius: var(--radius-lg);
+      padding: var(--space-10) var(--space-8);
+      color: var(--text-inverse);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pain__quote::before {
+      content: '\201C';
+      font-family: var(--font-serif);
+      font-size: 8rem;
+      color: var(--accent-olive);
+      opacity: 0.25;
+      position: absolute;
+      top: -1.5rem;
+      left: 1.5rem;
+      line-height: 1;
+    }
+
+    .pain__quote-text {
+      font-family: var(--font-serif);
+      font-size: var(--text-2xl);
+      font-weight: 400;
+      line-height: 1.45;
+      font-style: italic;
+      position: relative;
+      z-index: 1;
+    }
+
+    .pain__quote-source {
+      margin-top: var(--space-5);
+      font-size: var(--text-xs);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent-light);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* =============================================
+       SEÇÃO — ABORDAGEM / DIFERENCIAL
+    ============================================= */
+    .section-approach {
+      padding: var(--space-24) 0;
+      background: var(--bg-primary);
+    }
+
+    .approach__header {
+      max-width: 660px;
+      margin: 0 auto var(--space-16);
+      text-align: center;
+    }
+
+    .approach__headline {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 500;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      margin-bottom: var(--space-6);
+    }
+
+    .approach__intro {
+      font-size: var(--text-lg);
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    .approach__intro strong {
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+
+    .approach__pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-6);
+      margin-top: var(--space-12);
+    }
+
+    .pillar {
+      padding: var(--space-8) var(--space-7);
+      background: var(--bg-secondary);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .pillar:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .pillar__number {
+      font-family: var(--font-serif);
+      font-size: var(--text-5xl);
+      font-weight: 400;
+      color: var(--accent-light);
+      line-height: 1;
+      margin-bottom: var(--space-5);
+      opacity: 0.7;
+    }
+
+    .pillar__title {
+      font-family: var(--font-serif);
+      font-size: var(--text-xl);
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: var(--space-3);
+      line-height: 1.3;
+    }
+
+    .pillar__desc {
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    /* =============================================
+       SEÇÃO — SERVIÇOS
+    ============================================= */
+    .section-services {
+      padding: var(--space-24) 0;
+      background: var(--bg-secondary);
+    }
+
+    .services__header {
+      margin-bottom: var(--space-12);
+    }
+
+    .services__headline {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 500;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      color: var(--text-primary);
+      margin-bottom: var(--space-4);
+    }
+
+    .services__intro {
+      font-size: var(--text-base);
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 600px;
+    }
+
+    .services__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-4);
+    }
+
+    .service-card {
+      background: var(--bg-primary);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      padding: var(--space-8) var(--space-7);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+      transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+      cursor: default;
+    }
+
+    .service-card:hover {
+      border-color: var(--accent-light);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    .service-card--featured {
+      grid-column: span 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-10);
+      align-items: center;
+      padding: var(--space-10) var(--space-10);
+    }
+
+    .service-card__tag {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      background: var(--bg-accent);
+      border-radius: var(--radius-full);
+      padding: var(--space-1) var(--space-3);
+      font-size: var(--text-xs);
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-dark);
+      width: fit-content;
+    }
+
+    .service-card__title {
+      font-family: var(--font-serif);
+      font-size: var(--text-2xl);
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.25;
+    }
+
+    .service-card__desc {
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    .service-card__for {
+      margin-top: var(--space-2);
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-2);
+    }
+
+    .service-card__for-label {
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent-olive);
+      white-space: nowrap;
+      margin-top: 1px;
+    }
+
+    .service-card__for-text {
+      font-size: var(--text-xs);
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .service-card__visual {
+      background: var(--bg-accent);
+      border-radius: var(--radius-md);
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-3);
+    }
+
+    .service-card__visual svg {
+      width: 40px;
+      height: 40px;
+      color: var(--accent-light);
+      opacity: 0.5;
+    }
+
+    .service-card__visual-label {
+      font-size: var(--text-xs);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .services__cta-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-3);
+      margin-top: var(--space-12);
+      text-align: center;
+    }
+
+    .services__cta-hint {
+      font-size: var(--text-sm);
+      color: var(--text-muted);
+    }
+
+    /* =============================================
+       SEÇÃO — PROVA SOCIAL
+    ============================================= */
+    .section-proof {
+      padding: var(--space-24) 0;
+      background: var(--bg-primary);
+    }
+
+    .proof__header {
+      text-align: center;
+      max-width: 560px;
+      margin: 0 auto var(--space-12);
+    }
+
+    .proof__headline {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 3.5vw, 2.75rem);
+      font-weight: 500;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      margin-bottom: var(--space-4);
+    }
+
+    .proof__sub {
+      font-size: var(--text-base);
+      color: var(--text-secondary);
+      line-height: 1.65;
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: var(--text-xl);
+    }
+
+    .proof__gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-4);
+      margin-bottom: var(--space-8);
+    }
+
+    .proof__item {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: var(--bg-accent);
+    }
+
+    .proof__item:first-child {
+      grid-row: span 2;
+    }
+
+    .proof__item-inner {
+      width: 100%;
+      height: 100%;
+      min-height: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-3);
+      padding: var(--space-6);
+    }
+
+    .proof__item:first-child .proof__item-inner {
+      min-height: 420px;
+    }
+
+    .proof__item-inner svg {
+      width: 36px;
+      height: 36px;
+      color: var(--accent-light);
+      opacity: 0.5;
+    }
+
+    .proof__item-label {
+      font-size: var(--text-xs);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .proof__caption {
+      text-align: center;
+      font-size: var(--text-sm);
+      color: var(--text-muted);
+      line-height: 1.6;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    /* =============================================
+       SEÇÃO — EQUIPE
+    ============================================= */
+    .section-team {
+      padding: var(--space-24) 0;
+      background: var(--bg-dark);
+      color: var(--text-inverse);
+    }
+
+    .section-team .section-label {
+      color: var(--accent-light);
+    }
+
+    .section-team .section-label::before {
+      background: var(--accent-light);
+    }
+
+    .team__headline {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 3.5vw, 2.75rem);
+      font-weight: 500;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--text-inverse);
+      margin-bottom: var(--space-12);
+    }
+
+    .team__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-6);
+    }
+
+    .team__card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .team__card-photo {
+      aspect-ratio: 4/3;
+      background: rgba(255,255,255,0.06);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-3);
+    }
+
+    .team__card-photo svg {
+      width: 48px;
+      height: 48px;
+      color: var(--accent-light);
+      opacity: 0.3;
+    }
+
+    .team__card-photo-label {
+      font-size: var(--text-xs);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+    }
+
+    .team__card-body {
+      padding: var(--space-8);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+    }
+
+    .team__card-name {
+      font-family: var(--font-serif);
+      font-size: var(--text-2xl);
+      font-weight: 600;
+      color: var(--text-inverse);
+    }
+
+    .team__card-role {
+      font-size: var(--text-xs);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent-light);
+      margin-top: -var(--space-2);
+    }
+
+    .team__card-quote {
+      font-family: var(--font-serif);
+      font-size: var(--text-lg);
+      font-style: italic;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.6;
+      border-left: 2px solid var(--accent-olive);
+      padding-left: var(--space-4);
+    }
+
+    .team__credentials {
+      margin-top: var(--space-12);
+      padding-top: var(--space-8);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      gap: var(--space-8);
+    }
+
+    .team__credential {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-1);
+    }
+
+    .team__credential-label {
+      font-size: var(--text-xs);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+    }
+
+    .team__credential-value {
+      font-size: var(--text-base);
+      color: rgba(255,255,255,0.7);
+      font-weight: 500;
+    }
+
+    .team__credential-divider {
+      width: 1px;
+      height: 36px;
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* =============================================
+       SEÇÃO — ESPAÇO
+    ============================================= */
+    .section-space {
+      padding: var(--space-24) 0;
+      background: var(--bg-secondary);
+    }
+
+    .space__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-16);
+      align-items: center;
+    }
+
+    .space__content {}
+
+    .space__headline {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 500;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      color: var(--text-primary);
+      margin-bottom: var(--space-5);
+    }
+
+    .space__quote {
+      font-family: var(--font-serif);
+      font-size: var(--text-xl);
+      font-style: italic;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: var(--space-8);
+      padding-left: var(--space-5);
+      border-left: 2px solid var(--accent-olive);
+    }
+
+    .space__attributes {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+
+    .space__attr {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+    }
+
+    .space__attr-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-olive);
+      flex-shrink: 0;
+    }
+
+    .space__gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: var(--space-4);
+    }
+
+    .space__img {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: var(--bg-accent);
+    }
+
+    .space__img:first-child {
+      grid-column: span 2;
+      aspect-ratio: 16/9;
+    }
+
+    .space__img:not(:first-child) {
+      aspect-ratio: 4/3;
+    }
+
+    .space__img-inner {
+      width: 100%;
+      height: 100%;
+      min-height: 140px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+    }
+
+    .space__img-inner svg {
+      width: 32px;
+      height: 32px;
+      color: var(--accent-light);
+      opacity: 0.5;
+    }
+
+    .space__img-label {
+      font-size: var(--text-xs);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    /* =============================================
+       SEÇÃO — LOCALIZAÇÃO
+    ============================================= */
+    .section-location {
+      padding: var(--space-24) 0;
+      background: var(--bg-primary);
+    }
+
+    .location__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-12);
+      align-items: start;
+    }
+
+    .location__headline {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 500;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      color: var(--text-primary);
+      margin-bottom: var(--space-8);
+    }
+
+    .location__address {
+      margin-bottom: var(--space-8);
+    }
+
+    .location__address-line {
+      font-size: var(--text-lg);
+      color: var(--text-primary);
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    .location__address-city {
+      font-size: var(--text-base);
+      color: var(--text-secondary);
+      margin-top: var(--space-1);
+    }
+
+    .location__whatsapp {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      margin-bottom: var(--space-8);
+      font-size: var(--text-base);
+      color: var(--text-secondary);
+    }
+
+    .location__whatsapp-icon {
+      width: 20px;
+      height: 20px;
+      color: var(--accent-olive);
+    }
+
+    .location__map {
+      background: var(--bg-accent);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      aspect-ratio: 16/10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-4);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .location__map svg {
+      width: 48px;
+      height: 48px;
+      color: var(--accent-light);
+      opacity: 0.5;
+    }
+
+    .location__map-label {
+      font-size: var(--text-sm);
+      color: var(--text-muted);
+      text-align: center;
+      max-width: 280px;
+      line-height: 1.5;
+    }
+
+    .location__map-link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent-olive);
+      border-bottom: 1px solid var(--accent-light);
+      padding-bottom: 1px;
+      transition: color var(--transition), border-color var(--transition);
+    }
+
+    .location__map-link:hover {
+      color: var(--accent-dark);
+      border-color: var(--accent-dark);
+    }
+
+    /* =============================================
+       SEÇÃO — CTA FINAL
+    ============================================= */
+    .section-final-cta {
+      padding: var(--space-24) 0;
+      background: var(--bg-secondary);
+    }
+
+    .final-cta__inner {
+      background: var(--bg-dark);
+      border-radius: var(--radius-lg);
+      padding: var(--space-20) var(--space-16);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .final-cta__inner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(107, 122, 92, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .final-cta__eyebrow {
+      font-size: var(--text-xs);
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-light);
+      margin-bottom: var(--space-6);
+    }
+
+    .final-cta__headline {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      font-weight: 400;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--text-inverse);
+      margin-bottom: var(--space-6);
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .final-cta__headline em {
+      font-style: italic;
+      color: var(--accent-light);
+    }
+
+    .final-cta__text {
+      font-size: var(--text-base);
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+      max-width: 480px;
+      margin: 0 auto var(--space-10);
+    }
+
+    .final-cta__quote {
+      font-family: var(--font-serif);
+      font-size: var(--text-lg);
+      font-style: italic;
+      color: rgba(255,255,255,0.45);
+      margin-top: var(--space-10);
+      padding-top: var(--space-8);
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    /* =============================================
+       FOOTER
+    ============================================= */
+    .footer {
+      background: var(--bg-dark);
+      padding: var(--space-12) 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .footer__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: var(--space-6);
+    }
+
+    .footer__brand {
+      font-family: var(--font-serif);
+      font-size: var(--text-lg);
+      font-weight: 600;
+      color: var(--text-inverse);
+    }
+
+    .footer__info {
+      font-size: var(--text-xs);
+      color: rgba(255,255,255,0.35);
+      text-align: right;
+      line-height: 1.7;
+    }
+
+    .footer__info a {
+      color: rgba(255,255,255,0.5);
+      transition: color var(--transition);
+    }
+
+    .footer__info a:hover {
+      color: rgba(255,255,255,0.8);
+    }
+
+    /* =============================================
+       FLOATING WhatsApp
+    ============================================= */
+    .float-wa {
+      position: fixed;
+      bottom: var(--space-6);
+      right: var(--space-6);
+      z-index: 200;
+      width: 56px;
+      height: 56px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35);
+      transition: transform var(--transition), box-shadow var(--transition);
+      cursor: pointer;
+    }
+
+    .float-wa:hover {
+      transform: scale(1.08);
+      box-shadow: 0 6px 24px rgba(37, 211, 102, 0.45);
+    }
+
+    .float-wa svg {
+      width: 28px;
+      height: 28px;
+      color: #fff;
+    }
+
+    /* =============================================
+       MOBILE — 768px e abaixo
+    ============================================= */
+    @media (max-width: 768px) {
+      :root {
+        --space-24: 4rem;
+        --space-20: 3.5rem;
+        --space-16: 3rem;
+        --space-12: 2.5rem;
+      }
+
+      .container {
+        padding: 0 var(--space-5);
+      }
+
+      /* Header */
+      .header__brand-sub {
+        display: none;
+      }
+
+      /* Hero — empilhado */
+      .hero {
+        display: flex;
+        flex-direction: column;
+        min-height: auto;
+        padding-top: 68px;
+      }
+
+      .hero__content {
+        padding: var(--space-10) 0 var(--space-8);
+        max-width: 100%;
+        margin-left: 0;
+        order: 2;
+      }
+
+      .hero__visual {
+        order: 1;
+        min-height: auto;
+        padding: var(--space-4) 0 0;
+      }
+
+      .hero__image-wrap {
+        min-height: 280px;
+        margin-top: 0;
+      }
+
+      .hero__image-placeholder {
+        min-height: 280px;
+      }
+
+      .hero__badge {
+        bottom: var(--space-4);
+        left: var(--space-4);
+        right: var(--space-4);
+      }
+
+      .hero__headline {
+        font-size: clamp(2rem, 7vw, 2.5rem);
+      }
+
+      .hero__sub {
+        font-size: var(--text-base);
+      }
+
+      .hero__ctas {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero__ctas .btn {
+        text-align: center;
+        justify-content: center;
+      }
+
+      .hero__credentials {
+        flex-wrap: wrap;
+        gap: var(--space-4);
+      }
+
+      /* Pain */
+      .pain__grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-10);
+      }
+
+      .pain__visual {
+        order: -1;
+      }
+
+      /* Approach */
+      .approach__pillars {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+      }
+
+      /* Services */
+      .services__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card--featured {
+        grid-column: span 1;
+        grid-template-columns: 1fr;
+      }
+
+      .service-card--featured .service-card__visual {
+        display: none;
+      }
+
+      /* Proof */
+      .proof__gallery {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .proof__item:first-child {
+        grid-column: span 2;
+        grid-row: span 1;
+      }
+
+      .proof__item:first-child .proof__item-inner {
+        min-height: 200px;
+      }
+
+      /* Team */
+      .team__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .team__credentials {
+        flex-wrap: wrap;
+        gap: var(--space-6);
+      }
+
+      .team__credential-divider {
+        display: none;
+      }
+
+      /* Space */
+      .space__grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-10);
+      }
+
+      .space__gallery {
+        order: -1;
+      }
+
+      .space__img:first-child {
+        grid-column: span 2;
+      }
+
+      /* Location */
+      .location__grid {
+        grid-template-columns: 1fr;
+      }
+
+      /* Final CTA */
+      .final-cta__inner {
+        padding: var(--space-12) var(--space-6);
+        border-radius: var(--radius-md);
+      }
+
+      /* Footer */
+      .footer__inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer__info {
+        text-align: center;
+      }
+    }
+
+    /* =============================================
+       TABLET — 480–768px ajustes finos
+    ============================================= */
+    @media (min-width: 480px) and (max-width: 768px) {
+      .approach__pillars {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .pillar:last-child {
+        grid-column: span 2;
+      }
+    }
+
+    /* =============================================
+       FOCO / ACESSIBILIDADE
+    ============================================= */
+    :focus-visible {
+      outline: 2px solid var(--accent-olive);
+      outline-offset: 3px;
+    }
+
+    .btn:focus-visible {
+      outline-offset: 3px;
+    }
+
+    /* =============================================
+       ANIMAÇÕES SUAVES
+    ============================================= */
+    @media (prefers-reduced-motion: no-preference) {
+      .pillar,
+      .service-card,
+      .pain__item {
+        transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================
+       HEADER
+  =========================================== -->
+  <header class="header" role="banner">
+    <div class="container">
+      <nav class="header__inner" aria-label="Navegação principal">
+        <a href="#" class="header__logo" aria-label="Sevvi Clínica Integrada — Página inicial">
+          <div class="header__logo-mark" aria-hidden="true">
+            <!-- Ícone folha/saúde — marca Sevvi -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 2C6 2 2 8 2 12c0 5.5 4.5 10 10 10s10-4.5 10-10C22 7 17 2 12 2z"/>
+              <path d="M12 7v10M7 12h10"/>
+            </svg>
+          </div>
+          <div class="header__brand">
+            <span class="header__brand-name">Sevvi</span>
+            <span class="header__brand-sub">Clínica Integrada</span>
+          </div>
+        </a>
+        <a href="https://wa.me/5522998505103" target="_blank" rel="noopener noreferrer" class="btn btn--primary header__cta" aria-label="Agendar avaliação pelo WhatsApp">
+          Agendar avaliação
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       HERO
+  =========================================== -->
+  <section class="hero" aria-label="Apresentação da Sevvi Clínica Integrada">
+    <div class="container" style="display: contents;">
+
+      <div class="hero__content" style="padding-left: var(--space-6);">
+        <div class="hero__eyebrow" aria-hidden="true">
+          <span class="hero__eyebrow-dot"></span>
+          <span class="hero__eyebrow-text">Clínica Integrada · Campos dos Goytacazes, RJ</span>
+        </div>
+
+        <h1 class="hero__headline">
+          Você não precisa de mais<br/>
+          um protocolo.<br/>
+          Precisa de alguém que<br/>
+          <em>entenda você de verdade.</em>
+        </h1>
+
+        <p class="hero__sub">
+          Aqui você não recebe um tratamento. Você recebe uma estratégia — construída a partir de quem você é, não de um protocolo padrão.
+        </p>
+
+        <div class="hero__ctas">
+          <a href="https://wa.me/5522998505103"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="btn btn--primary btn--large"
+             aria-label="Agendar minha avaliação pelo WhatsApp">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            Agendar minha avaliação
+          </a>
+          <a href="#servicos" class="btn btn--ghost" aria-label="Ver tratamentos disponíveis">
+            Ver tratamentos
+          </a>
+        </div>
+
+        <div class="hero__credentials" aria-label="Credenciais da clínica">
+          <div class="hero__cred-item">
+            <span class="hero__cred-label">Registro</span>
+            <span class="hero__cred-value">CRM 1361872</span>
+          </div>
+          <div class="hero__cred-divider" aria-hidden="true"></div>
+          <div class="hero__cred-item">
+            <span class="hero__cred-label">Especialidades</span>
+            <span class="hero__cred-value">Medicina · Nutrição</span>
+          </div>
+          <div class="hero__cred-divider" aria-hidden="true"></div>
+          <div class="hero__cred-item">
+            <span class="hero__cred-label">Atendimento</span>
+            <span class="hero__cred-value">Presencial</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__visual" aria-hidden="true">
+        <div class="hero__image-wrap">
+          <!-- PLACEHOLDER: Substituir pela foto profissional da Dra. Mariana em ambiente clínico -->
+          <!-- <img src="foto-dra-mariana.webp" alt="Dra. Mariana em consultório da Sevvi Clínica Integrada" width="600" height="800" style="width:100%; height:100%; object-fit:cover; object-position:center top;" loading="eager"> -->
+          <div class="hero__image-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <circle cx="12" cy="8" r="4"/>
+              <path d="M4 20c0-4 3.58-7 8-7s8 3 8 7"/>
+            </svg>
+            <span class="hero__image-placeholder-label">FOTO — DRA. MARIANA<br/>Retrato profissional · Ambiente clínico</span>
+          </div>
+
+          <div class="hero__badge">
+            <div class="hero__badge-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <div class="hero__badge-text">
+              <div class="hero__badge-title">Cuidado integral com olhar humano</div>
+              <div class="hero__badge-desc">Medicina Estética · Funcional · Nutrição</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       DOR / IDENTIFICAÇÃO
+  =========================================== -->
+  <section class="section-pain" id="identificacao" aria-label="Situações que a Sevvi entende">
+    <div class="container">
+      <div class="pain__grid">
+
+        <div class="pain__content">
+          <span class="section-label" aria-hidden="true">Você se reconhece?</span>
+          <h2 class="pain__headline">
+            Você se reconhece em alguma dessas situações?
+          </h2>
+
+          <ul class="pain__list" role="list">
+            <li class="pain__item">
+              <span class="pain__item-check" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </span>
+              <span class="pain__item-text">Os exames vieram normais, mas você não se sente bem.</span>
+            </li>
+            <li class="pain__item">
+              <span class="pain__item-check" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </span>
+              <span class="pain__item-text">Você tenta emagrecer há meses e o peso simplesmente não sai.</span>
+            </li>
+            <li class="pain__item">
+              <span class="pain__item-check" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </span>
+              <span class="pain__item-text">Tem uma fadiga que não passa, mesmo dormindo.</span>
+            </li>
+            <li class="pain__item">
+              <span class="pain__item-check" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </span>
+              <span class="pain__item-text">Seu corpo parece ter mudado do nada, sem uma razão clara.</span>
+            </li>
+            <li class="pain__item">
+              <span class="pain__item-check" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </span>
+              <span class="pain__item-text">Já fez tratamento antes e sentiu que recebeu o mesmo protocolo que qualquer outra pessoa.</span>
+            </li>
+          </ul>
+
+          <p class="pain__transition">
+            Essas situações têm explicação. E na maioria das vezes, ela está em algum lugar que ainda não foi investigado com atenção suficiente.
+          </p>
+        </div>
+
+        <div class="pain__visual">
+          <div class="pain__quote" role="blockquote">
+            <p class="pain__quote-text">
+              Nem sempre "exame normal" significa que está tudo bem. O exame é uma foto. O corpo é um filme, e o sintoma fala.
+            </p>
+            <p class="pain__quote-source">Sevvi Clínica Integrada</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       ABORDAGEM
+  =========================================== -->
+  <section class="section-approach" id="abordagem" aria-label="Como a Sevvi atende">
+    <div class="container">
+      <div class="approach__header">
+        <span class="section-label" aria-hidden="true">Nossa abordagem</span>
+        <h2 class="approach__headline">
+          Na Sevvi, a gente começa entendendo você.
+        </h2>
+        <p class="approach__intro">
+          Antes de qualquer procedimento, existe uma avaliação. Uma conversa real, onde o objetivo é entender o que está acontecendo com o seu corpo — não apenas o que aparece nos exames, mas o que você sente, como você funciona, o que já tentou e por que não funcionou.<br/><br/>
+          <strong>Só depois disso vem a estratégia.</strong>
+        </p>
+      </div>
+
+      <div class="approach__pillars">
+        <article class="pillar">
+          <div class="pillar__number" aria-hidden="true">01</div>
+          <h3 class="pillar__title">Avaliação que investiga a causa</h3>
+          <p class="pillar__desc">
+            Não partimos do sintoma. Partimos da origem. Metabolismo, tireoide, intestino, hormônios — tudo faz parte do diagnóstico antes de qualquer proposta.
+          </p>
+        </article>
+
+        <article class="pillar">
+          <div class="pillar__number" aria-hidden="true">02</div>
+          <h3 class="pillar__title">Acompanhamento clínico real</h3>
+          <p class="pillar__desc">
+            Você não fica sozinha no processo. Cada tratamento tem um acompanhamento estruturado, com profissionais que estão atentos à sua evolução.
+          </p>
+        </article>
+
+        <article class="pillar">
+          <div class="pillar__number" aria-hidden="true">03</div>
+          <h3 class="pillar__title">Estratégia personalizada</h3>
+          <p class="pillar__desc">
+            Não existe protocolo padrão na Sevvi. O que funciona para você foi pensado especificamente para você.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SERVIÇOS
+  =========================================== -->
+  <section class="section-services" id="servicos" aria-label="Tratamentos disponíveis na Sevvi">
+    <div class="container">
+      <div class="services__header">
+        <span class="section-label" aria-hidden="true">Tratamentos</span>
+        <h2 class="services__headline">Tratamentos disponíveis</h2>
+        <p class="services__intro">
+          Cada serviço é parte de uma abordagem integrada. Nenhum deles funciona sozinho da forma certa — o que faz diferença é como são combinados dentro da sua estratégia de saúde.
+        </p>
+      </div>
+
+      <div class="services__grid">
+
+        <!-- Card em destaque — Emagrecimento Clínico -->
+        <article class="service-card service-card--featured">
+          <div>
+            <span class="service-card__tag">Emagrecimento</span>
+            <h3 class="service-card__title" style="margin-top: var(--space-4);">Emagrecimento Clínico</h3>
+            <p class="service-card__desc">
+              Para quem sente que o peso travou, que já tentou de tudo sem resultado duradouro ou que engorda com facilidade sem entender o motivo. O processo começa com análise metabólica — tireoide, intestino, resistência à insulina. O que não é investigado, não é tratado.
+            </p>
+            <div class="service-card__for" style="margin-top: var(--space-5);">
+              <span class="service-card__for-label">Para quem:</span>
+              <span class="service-card__for-text">Pessoas com histórico de tentativas sem resultado duradouro</span>
+            </div>
+          </div>
+          <div class="service-card__visual">
+            <!-- PLACEHOLDER: Foto de atendimento / consultório em uso -->
+            <!-- <img src="foto-atendimento.webp" alt="Consulta de emagrecimento clínico na Sevvi" width="500" height="380" style="width:100%; height:100%; object-fit:cover;" loading="lazy"> -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M9 12h6m-3-3v6m-7 3h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+            <span class="service-card__visual-label">FOTO — ATENDIMENTO</span>
+          </div>
+        </article>
+
+        <!-- Saúde Hormonal -->
+        <article class="service-card">
+          <span class="service-card__tag">Hormônios</span>
+          <h3 class="service-card__title" style="margin-top: var(--space-3);">Saúde Hormonal</h3>
+          <p class="service-card__desc">
+            Para mulheres que perceberam mudanças no próprio corpo: cansaço excessivo, alterações de humor, dificuldade para dormir, falta de disposição. Na Sevvi, o implante hormonal faz parte de uma estratégia de acompanhamento — não é apenas um procedimento.
+          </p>
+          <div class="service-card__for">
+            <span class="service-card__for-label">Para quem:</span>
+            <span class="service-card__for-text">Mulheres em transição hormonal ou busca de equilíbrio</span>
+          </div>
+        </article>
+
+        <!-- Suporte Medicamentoso -->
+        <article class="service-card">
+          <span class="service-card__tag">Medicação</span>
+          <h3 class="service-card__title" style="margin-top: var(--space-3);">Suporte ao Emagrecimento</h3>
+          <p class="service-card__desc">
+            Para quem precisa de apoio adicional dentro de um processo clínico estruturado. A medicação complementa — não substitui — uma alimentação bem orientada e um plano de movimento. Aqui, os básicos vêm primeiro.
+          </p>
+          <div class="service-card__for">
+            <span class="service-card__for-label">Para quem:</span>
+            <span class="service-card__for-text">Pessoas em processo clínico que precisam de suporte adicional</span>
+          </div>
+        </article>
+
+        <!-- Nutrição Clínica -->
+        <article class="service-card">
+          <span class="service-card__tag">Nutrição</span>
+          <h3 class="service-card__title" style="margin-top: var(--space-3);">Nutrição Clínica</h3>
+          <p class="service-card__desc">
+            Para equilíbrio metabólico e nutricional. Análise de carências vitamínicas, suplementação estratégica e orientação alimentar integrada ao seu processo de saúde.
+          </p>
+          <div class="service-card__for">
+            <span class="service-card__for-label">Para quem:</span>
+            <span class="service-card__for-text">Quem busca equilíbrio metabólico e nutricional</span>
+          </div>
+        </article>
+
+        <!-- Hair Boost -->
+        <article class="service-card">
+          <span class="service-card__tag">Capilar</span>
+          <h3 class="service-card__title" style="margin-top: var(--space-3);">Hair Boost</h3>
+          <p class="service-card__desc">
+            Para quem percebeu queda de cabelo ou enfraquecimento capilar. Tratamento específico com acompanhamento clínico integrado ao cuidado geral da saúde.
+          </p>
+          <div class="service-card__for">
+            <span class="service-card__for-label">Para quem:</span>
+            <span class="service-card__for-text">Pessoas com queda ou enfraquecimento capilar</span>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="services__cta-wrap">
+        <p class="services__cta-hint">Não sabe por onde começar? A avaliação inicial é o primeiro passo.</p>
+        <a href="https://wa.me/5522998505103"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="btn btn--primary btn--large"
+           aria-label="Agendar avaliação pelo WhatsApp">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Agendar minha avaliação
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       PROVA SOCIAL
+  =========================================== -->
+  <section class="section-proof" id="resultados" aria-label="Transformações de clientes da Sevvi">
+    <div class="container">
+      <div class="proof__header">
+        <span class="section-label" aria-hidden="true">Resultados</span>
+        <h2 class="proof__headline">Transformações reais</h2>
+        <p class="proof__sub">
+          Resultado que aparece por fora, mas começa por dentro.
+        </p>
+      </div>
+
+      <div class="proof__gallery" aria-label="Galeria de resultados de clientes">
+        <!-- PLACEHOLDER: Fotos do destaque RESULTADOS do Instagram da Sevvi -->
+        <!-- Verificar autorização de uso de cada imagem antes de publicar -->
+
+        <div class="proof__item" role="img" aria-label="Foto de transformação — resultado de cliente Sevvi">
+          <div class="proof__item-inner">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <polyline points="21 15 16 10 5 21"/>
+            </svg>
+            <!-- Após adicionar imagem real: -->
+            <!-- <img src="resultado-1.webp" alt="Transformação de cliente — processo de emagrecimento clínico na Sevvi" width="400" height="600" style="width:100%; height:100%; object-fit:cover;" loading="lazy"> -->
+            <span class="proof__item-label">RESULTADO — Emagrecimento Clínico</span>
+          </div>
+        </div>
+
+        <div class="proof__item" role="img" aria-label="Foto de transformação — resultado hormonal">
+          <div class="proof__item-inner">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <polyline points="21 15 16 10 5 21"/>
+            </svg>
+            <!-- <img src="resultado-2.webp" alt="Transformação de cliente — equilíbrio hormonal na Sevvi" width="400" height="280" style="width:100%; height:100%; object-fit:cover;" loading="lazy"> -->
+            <span class="proof__item-label">RESULTADO — Saúde Hormonal</span>
+          </div>
+        </div>
+
+        <div class="proof__item" role="img" aria-label="Foto de transformação — resultado integrado">
+          <div class="proof__item-inner">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <polyline points="21 15 16 10 5 21"/>
+            </svg>
+            <!-- <img src="resultado-3.webp" alt="Transformação de cliente — saúde integrada na Sevvi" width="400" height="280" style="width:100%; height:100%; object-fit:cover;" loading="lazy"> -->
+            <span class="proof__item-label">RESULTADO — Saúde Integrada</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="proof__caption">
+        Cada pessoa que passou pela Sevvi chegou com uma história diferente. E cada estratégia foi diferente também.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       EQUIPE
+  =========================================== -->
+  <section class="section-team" id="equipe" aria-label="Equipe da Sevvi Clínica Integrada">
+    <div class="container">
+      <span class="section-label" aria-hidden="true">Quem cuida de você</span>
+      <h2 class="team__headline">Quem cuida de você na Sevvi</h2>
+
+      <div class="team__grid">
+
+        <article class="team__card">
+          <div class="team__card-photo" aria-label="Foto profissional da Dra. Mariana">
+            <!-- PLACEHOLDER: Foto profissional da Dra. Mariana -->
+            <!-- <img src="foto-dra-mariana-equipe.webp" alt="Dra. Mariana — Medicina Estética e Funcional na Sevvi" width="600" height="450" style="width:100%; height:100%; object-fit:cover; object-position:center top;" loading="lazy"> -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <circle cx="12" cy="8" r="4"/>
+              <path d="M4 20c0-4 3.58-7 8-7s8 3 8 7"/>
+            </svg>
+            <span class="team__card-photo-label">FOTO — DRA. MARIANA</span>
+          </div>
+          <div class="team__card-body">
+            <div>
+              <h3 class="team__card-name">Dra. Mariana</h3>
+              <p class="team__card-role">Medicina Estética · Medicina Funcional · Líder Clínica</p>
+            </div>
+            <blockquote class="team__card-quote">
+              "Cuidar vai muito além de um atendimento. É estar atento aos detalhes, acolher, ouvir e oferecer uma estratégia."
+            </blockquote>
+          </div>
+        </article>
+
+        <article class="team__card">
+          <div class="team__card-photo" aria-label="Foto profissional da Dra. Luma">
+            <!-- PLACEHOLDER: Foto profissional da Dra. Luma -->
+            <!-- <img src="foto-dra-luma.webp" alt="Dra. Luma — Nutrição Clínica na Sevvi" width="600" height="450" style="width:100%; height:100%; object-fit:cover; object-position:center top;" loading="lazy"> -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <circle cx="12" cy="8" r="4"/>
+              <path d="M4 20c0-4 3.58-7 8-7s8 3 8 7"/>
+            </svg>
+            <span class="team__card-photo-label">FOTO — DRA. LUMA</span>
+          </div>
+          <div class="team__card-body">
+            <div>
+              <h3 class="team__card-name">Dra. Luma</h3>
+              <p class="team__card-role">Nutrição Clínica</p>
+            </div>
+            <blockquote class="team__card-quote">
+              Especialista em nutrição funcional e metabolismo, integrada ao processo clínico da Sevvi para uma abordagem completa de saúde.
+            </blockquote>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="team__credentials" aria-label="Credenciais da clínica">
+        <div class="team__credential">
+          <span class="team__credential-label">Registro Médico</span>
+          <span class="team__credential-value">CRM 1361872</span>
+        </div>
+        <div class="team__credential-divider" aria-hidden="true"></div>
+        <div class="team__credential">
+          <span class="team__credential-label">Verificação</span>
+          <span class="team__credential-value">Doctoralia</span>
+        </div>
+        <div class="team__credential-divider" aria-hidden="true"></div>
+        <div class="team__credential">
+          <span class="team__credential-label">Localização</span>
+          <span class="team__credential-value">Campos dos Goytacazes, RJ</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       ESPAÇO
+  =========================================== -->
+  <section class="section-space" id="espaco" aria-label="Ambiente da Sevvi Clínica Integrada">
+    <div class="container">
+      <div class="space__grid">
+
+        <div class="space__content">
+          <span class="section-label" aria-hidden="true">O espaço</span>
+          <h2 class="space__headline">Um espaço pensado para fazer parte do cuidado</h2>
+          <blockquote class="space__quote">
+            "Cada detalhe da Sevvi foi pensado para fazer você se sentir bem antes mesmo do tratamento começar."
+          </blockquote>
+          <div class="space__attributes" aria-label="Características do ambiente">
+            <div class="space__attr">
+              <span class="space__attr-dot" aria-hidden="true"></span>
+              <span>Iluminação natural e warm em todos os ambientes</span>
+            </div>
+            <div class="space__attr">
+              <span class="space__attr-dot" aria-hidden="true"></span>
+              <span>Design minimalista com elementos naturais</span>
+            </div>
+            <div class="space__attr">
+              <span class="space__attr-dot" aria-hidden="true"></span>
+              <span>Recepção acolhedora com plantas e mobiliário contemporâneo</span>
+            </div>
+            <div class="space__attr">
+              <span class="space__attr-dot" aria-hidden="true"></span>
+              <span>Ambiente clínico humanizado — não hospitalar</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="space__gallery" aria-label="Fotos do ambiente da Sevvi">
+
+          <div class="space__img" role="img" aria-label="Recepção da Sevvi Clínica Integrada">
+            <div class="space__img-inner">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <polyline points="21 15 16 10 5 21"/>
+              </svg>
+              <!-- <img src="foto-recepcao.webp" alt="Recepção acolhedora da Sevvi Clínica Integrada em Campos dos Goytacazes" style="width:100%; height:100%; object-fit:cover;" loading="lazy"> -->
+              <span class="space__img-label">FOTO — RECEPÇÃO</span>
+            </div>
+          </div>
+
+          <div class="space__img" role="img" aria-label="Consultório da Sevvi">
+            <div class="space__img-inner">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <polyline points="21 15 16 10 5 21"/>
+              </svg>
+              <!-- <img src="foto-consultorio.webp" alt="Consultório premium da Sevvi" style="width:100%; height:100%; object-fit:cover;" loading="lazy"> -->
+              <span class="space__img-label">FOTO — CONSULTÓRIO</span>
+            </div>
+          </div>
+
+          <div class="space__img" role="img" aria-label="Detalhe decorativo da Sevvi">
+            <div class="space__img-inner">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <polyline points="21 15 16 10 5 21"/>
+              </svg>
+              <!-- <img src="foto-detalhe.webp" alt="Detalhe do ambiente — plantas e design da Sevvi" style="width:100%; height:100%; object-fit:cover;" loading="lazy"> -->
+              <span class="space__img-label">FOTO — DETALHE</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       LOCALIZAÇÃO
+  =========================================== -->
+  <section class="section-location" id="localizacao" aria-label="Localização da Sevvi Clínica Integrada">
+    <div class="container">
+      <div class="location__grid">
+
+        <div>
+          <span class="section-label" aria-hidden="true">Onde encontrar</span>
+          <h2 class="location__headline">Onde encontrar a Sevvi</h2>
+
+          <div class="location__address">
+            <p class="location__address-line">Av. Petrarca, nº 360</p>
+            <p class="location__address-line">Parque Tamandaré</p>
+            <p class="location__address-city">Campos dos Goytacazes — RJ</p>
+          </div>
+
+          <div class="location__whatsapp">
+            <svg class="location__whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            <span>(22) 99850-5103</span>
+          </div>
+
+          <a href="https://wa.me/5522998505103"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="btn btn--primary"
+             aria-label="Falar com a Sevvi pelo WhatsApp para tirar dúvidas">
+            Falar pelo WhatsApp
+          </a>
+        </div>
+
+        <div>
+          <div class="location__map" role="region" aria-label="Mapa da localização da Sevvi">
+            <!-- SUBSTITUIR pelo iframe do Google Maps -->
+            <!-- Exemplo:
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!..."
+              width="100%"
+              height="100%"
+              style="border:0; width:100%; height:100%;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Localização da Sevvi Clínica Integrada — Campos dos Goytacazes, RJ"
+            ></iframe>
+            -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+              <circle cx="12" cy="9" r="2.5"/>
+            </svg>
+            <p class="location__map-label">
+              Av. Petrarca, nº 360<br/>Parque Tamandaré<br/>Campos dos Goytacazes, RJ
+            </p>
+            <a href="https://maps.google.com/?q=Av.+Petrarca+360+Parque+Tamandare+Campos+dos+Goytacazes+RJ"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="location__map-link"
+               aria-label="Abrir localização da Sevvi no Google Maps">
+              Abrir no Google Maps
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       CTA FINAL
+  =========================================== -->
+  <section class="section-final-cta" aria-label="Convite para agendar avaliação">
+    <div class="container">
+      <div class="final-cta__inner">
+        <p class="final-cta__eyebrow">Próximo passo</p>
+        <h2 class="final-cta__headline">
+          O primeiro passo não é um procedimento.<br/>
+          É <em>uma conversa.</em>
+        </h2>
+        <p class="final-cta__text">
+          Você não precisa saber exatamente o que precisa. Precisa apenas de uma avaliação com quem vai ouvir o que está acontecendo com você de verdade.
+        </p>
+        <a href="https://wa.me/5522998505103"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="btn btn--primary btn--large"
+           aria-label="Agendar avaliação inicial na Sevvi Clínica Integrada pelo WhatsApp">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Agendar minha avaliação agora
+        </a>
+        <p class="final-cta__quote">
+          Cuidar de você não é um gasto. É uma proteção.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FOOTER
+  =========================================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">Sevvi Clínica Integrada</div>
+        <div class="footer__info">
+          Av. Petrarca, nº 360 · Parque Tamandaré · Campos dos Goytacazes, RJ<br/>
+          CRM 1361872 ·
+          <a href="https://wa.me/5522998505103" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp da Sevvi">(22) 99850-5103</a> ·
+          <a href="https://www.instagram.com/sevviclinicaintegrada/" target="_blank" rel="noopener noreferrer" aria-label="Instagram da Sevvi">@sevviclinicaintegrada</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================
+       FLOATING WHATSAPP BUTTON (mobile)
+  =========================================== -->
+  <a href="https://wa.me/5522998505103"
+     target="_blank"
+     rel="noopener noreferrer"
+     class="float-wa"
+     aria-label="Contato pelo WhatsApp — Sevvi Clínica Integrada"
+     role="button">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <!-- ==========================================
+       JAVASCRIPT MÍNIMO
+  =========================================== -->
+  <script>
+    // Header scroll state
+    (function() {
+      var header = document.querySelector('.header');
+      if (!header) return;
+      var ticking = false;
+
+      function onScroll() {
+        if (!ticking) {
+          requestAnimationFrame(function() {
+            if (window.scrollY > 10) {
+              header.style.boxShadow = '0 2px 20px rgba(44, 41, 34, 0.08)';
+            } else {
+              header.style.boxShadow = 'none';
+            }
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+    })();
+
+    // Scroll suave para âncoras internas
+    (function() {
+      var anchors = document.querySelectorAll('a[href^="#"]');
+      anchors.forEach(function(anchor) {
+        anchor.addEventListener('click', function(e) {
+          var targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          var target = document.querySelector(targetId);
+          if (target) {
+            e.preventDefault();
+            var headerH = document.querySelector('.header').offsetHeight || 68;
+            var top = target.getBoundingClientRect().top + window.scrollY - headerH - 20;
+            window.scrollTo({ top: top, behavior: 'smooth' });
+          }
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>
