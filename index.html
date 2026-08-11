@@ -1,22 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sevvi Clínica Integrada | Medicina Estética e Saúde em Campos dos Goytacazes, RJ</title>
-  <meta name="description" content="Clínica multidisciplinar em Campos dos Goytacazes com foco em emagrecimento clínico, saúde hormonal, nutrição e medicina funcional. Atendimento personalizado, acompanhamento real. Agende pelo WhatsApp." />
-  <meta name="robots" content="index, follow" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sevvi Clínica Integrada | Medicina Estética, Hormonal e Emagrecimento em Campos dos Goytacazes</title>
+  <meta name="description" content="Saúde integrada, emagrecimento definitivo e equilíbrio hormonal em Campos dos Goytacazes - RJ. Tratamentos clínicos personalizados com olhar humano e excelência médica.">
+  <meta name="keywords" content="clínica integrada campos dos goytacazes, emagrecimento campos, implante hormonal campos, medicina estética campos, nutricionista campos dos goytacazes, dra mariana sevvi">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons via CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
-    /* =============================================
-       RESET & BASE
-    ============================================= */
+    /* CSS RESET & VARIABLES */
     *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+
+    :root {
+      /* Palette */
+      --bg-primary: #FAF9F6;      /* Off-white quente e relaxante */
+      --bg-surface: #FFFFFF;      /* Branco puro para cards e destaques */
+      --bg-subtle: #F2F0EB;       /* Bege/areia suave */
+      --bg-dark: #1E2822;         /* Verde floresta profunfíssimo / quase preto */
+      
+      --text-main: #2A332E;       /* Texto principal (antracite esverdeado) */
+      --text-muted: #5C6660;      /* Texto secundário */
+      --text-light: #F4F3EF;      /* Texto em fundos escuros */
+      
+      --brand-olive: #4A5D4E;     /* Verde-oliva / caqui elegante */
+      --brand-olive-light: #708474;
+      --brand-olive-subtle: #E8ECE8;
+      --brand-gold: #C5A059;      /* Dourado suave para detalhes */
+      
+      --cta-green: #25D366;       /* WhatsApp Accent */
+      --cta-green-hover: #1EBE5A;
+      
+      /* Fonts */
+      --font-heading: 'Playfair Display', Georgia, serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      
+      /* Layout & Shadows */
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.04);
+      --shadow-card: 0 10px 30px rgba(74, 93, 78, 0.08);
+      --shadow-hover: 0 15px 35px rgba(74, 93, 78, 0.12);
+      --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     html {
@@ -24,2425 +61,1485 @@
       font-size: 16px;
     }
 
-    /* =============================================
-       DESIGN TOKENS — SEVVI
-    ============================================= */
-    :root {
-      /* Paleta */
-      --bg-primary:   #FAFAF8;
-      --bg-secondary: #F3EDE5;
-      --bg-accent:    #EDE4D8;
-      --bg-dark:      #2C2922;
-
-      --text-primary:   #1E1B17;
-      --text-secondary: #6B6460;
-      --text-muted:     #9C9490;
-      --text-inverse:   #FAFAF8;
-
-      --accent-olive:   #6B7A5C;
-      --accent-dark:    #4A5540;
-      --accent-light:   #A8B89A;
-
-      --border-subtle:  #E8E0D6;
-      --border-medium:  #D4C8B8;
-
-      /* Tipografia */
-      --font-serif:  'Cormorant Garamond', Georgia, serif;
-      --font-sans:   'DM Sans', system-ui, sans-serif;
-
-      /* Escala tipográfica */
-      --text-xs:   0.75rem;
-      --text-sm:   0.875rem;
-      --text-base: 1rem;
-      --text-lg:   1.125rem;
-      --text-xl:   1.25rem;
-      --text-2xl:  1.5rem;
-      --text-3xl:  1.875rem;
-      --text-4xl:  2.25rem;
-      --text-5xl:  3rem;
-      --text-6xl:  3.75rem;
-      --text-7xl:  4.5rem;
-
-      /* Espaçamento */
-      --space-1:  0.25rem;
-      --space-2:  0.5rem;
-      --space-3:  0.75rem;
-      --space-4:  1rem;
-      --space-5:  1.25rem;
-      --space-6:  1.5rem;
-      --space-8:  2rem;
-      --space-10: 2.5rem;
-      --space-12: 3rem;
-      --space-16: 4rem;
-      --space-20: 5rem;
-      --space-24: 6rem;
-      --space-32: 8rem;
-
-      /* Bordas */
-      --radius-sm: 6px;
-      --radius-md: 12px;
-      --radius-lg: 20px;
-      --radius-full: 9999px;
-
-      /* Sombras */
-      --shadow-sm: 0 1px 3px rgba(44, 41, 34, 0.06), 0 1px 2px rgba(44, 41, 34, 0.04);
-      --shadow-md: 0 4px 12px rgba(44, 41, 34, 0.08), 0 2px 4px rgba(44, 41, 34, 0.04);
-      --shadow-lg: 0 10px 30px rgba(44, 41, 34, 0.10);
-
-      /* Transições */
-      --transition: 0.25s ease;
-    }
-
     body {
-      font-family: var(--font-sans);
+      font-family: var(--font-body);
       background-color: var(--bg-primary);
-      color: var(--text-primary);
+      color: var(--text-main);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
       overflow-x: hidden;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
+    /* TYPOGRAPHY */
+    h1, h2, h3, h4 {
+      font-family: var(--font-heading);
+      color: var(--text-main);
+      font-weight: 600;
+      line-height: 1.25;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
+    h1 {
+      font-size: clamp(2.1rem, 4vw, 3.4rem);
+      letter-spacing: -0.02em;
     }
 
-    /* =============================================
-       UTILITÁRIOS
-    ============================================= */
-    .container {
-      width: 100%;
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 var(--space-6);
+    h2 {
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      margin-bottom: 1rem;
     }
 
-    .container--narrow {
-      max-width: 760px;
+    h3 {
+      font-size: clamp(1.25rem, 2vw, 1.6rem);
     }
 
-    .serif {
-      font-family: var(--font-serif);
+    p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 1rem;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
     }
 
     .eyebrow {
-      font-family: var(--font-sans);
-      font-size: var(--text-xs);
-      font-weight: 500;
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
       letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent-olive);
+      color: var(--brand-olive);
+      margin-bottom: 0.75rem;
+      background-color: var(--brand-olive-subtle);
+      padding: 0.35rem 0.85rem;
+      border-radius: 50px;
     }
 
-    .section-label {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-2);
-      font-family: var(--font-sans);
-      font-size: var(--text-xs);
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent-olive);
-      margin-bottom: var(--space-5);
+    .eyebrow-gold {
+      color: var(--brand-gold);
+      background-color: rgba(197, 160, 89, 0.12);
     }
 
-    .section-label::before {
-      content: '';
-      display: block;
-      width: 24px;
-      height: 1px;
-      background: var(--accent-olive);
-      flex-shrink: 0;
+    .text-highlight {
+      color: var(--brand-olive);
+      font-style: italic;
     }
 
-    /* =============================================
-       PLACEHOLDER DE IMAGEM
-    ============================================= */
-    .img-placeholder {
-      background: var(--bg-accent);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: var(--space-2);
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      position: relative;
+    /* CONTAINER & LAYOUT */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
     }
 
-    .img-placeholder__label {
-      font-family: var(--font-sans);
-      font-size: var(--text-xs);
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      text-align: center;
-      padding: var(--space-4);
+    .section-padding {
+      padding: 5rem 0;
     }
 
-    .img-placeholder__icon {
-      width: 32px;
-      height: 32px;
-      color: var(--text-muted);
-      opacity: 0.5;
+    @media (max-width: 768px) {
+      .section-padding {
+        padding: 3.5rem 0;
+      }
     }
 
-    /* =============================================
-       BOTÕES
-    ============================================= */
+    /* BUTTONS & CTAS */
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: var(--space-2);
-      font-family: var(--font-sans);
-      font-size: var(--text-sm);
-      font-weight: 500;
-      line-height: 1;
-      border: none;
-      cursor: pointer;
-      transition: all var(--transition);
+      gap: 0.75rem;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 50px;
       text-decoration: none;
-      border-radius: var(--radius-full);
-      white-space: nowrap;
+      transition: var(--transition);
+      cursor: pointer;
+      border: none;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     }
 
-    .btn--primary {
-      background: var(--accent-olive);
-      color: #fff;
-      padding: var(--space-4) var(--space-8);
-      min-height: 52px;
+    .btn-primary {
+      background-color: var(--brand-olive);
+      color: #FFFFFF;
     }
 
-    .btn--primary:hover {
-      background: var(--accent-dark);
-      transform: translateY(-1px);
-      box-shadow: var(--shadow-md);
+    .btn-primary:hover {
+      background-color: var(--bg-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(30, 40, 34, 0.2);
     }
 
-    .btn--primary:active {
-      transform: translateY(0);
+    .btn-whatsapp {
+      background-color: var(--cta-green);
+      color: #FFFFFF;
+      font-weight: 700;
     }
 
-    .btn--ghost {
-      background: transparent;
-      color: var(--text-secondary);
-      padding: var(--space-3) var(--space-5);
-      border: 1px solid var(--border-medium);
-      min-height: 44px;
-      font-size: var(--text-xs);
-      letter-spacing: 0.06em;
+    .btn-whatsapp:hover {
+      background-color: var(--cta-green-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
     }
 
-    .btn--ghost:hover {
-      background: var(--bg-secondary);
-      color: var(--text-primary);
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--brand-olive);
+      border: 1.5px solid var(--brand-olive);
     }
 
-    .btn--large {
-      font-size: var(--text-base);
-      padding: var(--space-5) var(--space-10);
-      min-height: 60px;
+    .btn-secondary:hover {
+      background-color: var(--brand-olive-subtle);
+      color: var(--brand-olive);
     }
 
-    .btn-icon {
-      width: 20px;
-      height: 20px;
-      flex-shrink: 0;
+    .btn-full {
+      width: 100%;
     }
 
-    /* =============================================
-       HEADER
-    ============================================= */
+    .pulse-effect {
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+      }
+      70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+      }
+    }
+
+    /* HEADER & NAV */
     .header {
-      position: fixed;
+      position: sticky;
       top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      background: rgba(250, 250, 248, 0.92);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border-subtle);
-      transition: background var(--transition);
+      background-color: rgba(250, 249, 246, 0.92);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      z-index: 1000;
+      border-bottom: 1px solid rgba(74, 93, 78, 0.08);
+      padding: 1rem 0;
     }
 
-    .header__inner {
+    .header-container {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 68px;
     }
 
-    .header__logo {
-      display: flex;
-      align-items: center;
-      gap: var(--space-3);
-    }
-
-    .header__logo-mark {
-      width: 36px;
-      height: 36px;
-      background: var(--accent-olive);
-      border-radius: var(--radius-sm);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .header__logo-mark svg {
-      width: 20px;
-      height: 20px;
-      color: #fff;
-    }
-
-    .header__brand {
+    .logo {
       display: flex;
       flex-direction: column;
-      line-height: 1.1;
+      text-decoration: none;
     }
 
-    .header__brand-name {
-      font-family: var(--font-serif);
-      font-size: var(--text-xl);
-      font-weight: 600;
-      color: var(--text-primary);
-      letter-spacing: -0.01em;
+    .logo-text {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--brand-olive);
+      line-height: 1;
     }
 
-    .header__brand-sub {
-      font-size: var(--text-xs);
-      font-weight: 400;
-      color: var(--text-muted);
-      letter-spacing: 0.08em;
+    .logo-tagline {
+      font-size: 0.65rem;
       text-transform: uppercase;
-    }
-
-    .header__cta {
-      font-size: var(--text-xs) !important;
-      padding: var(--space-3) var(--space-5) !important;
-      min-height: 40px !important;
-    }
-
-    /* =============================================
-       HERO
-    ============================================= */
-    .hero {
-      padding-top: 68px;
-      min-height: 100svh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      background: var(--bg-primary);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 60% 50% at 100% 60%, rgba(107, 122, 92, 0.06) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .hero__content {
-      padding: var(--space-24) var(--space-6) var(--space-24) 0;
-      max-width: 560px;
-      margin-left: auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero__eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-2);
-      background: var(--bg-secondary);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-full);
-      padding: var(--space-2) var(--space-4);
-      margin-bottom: var(--space-8);
-    }
-
-    .hero__eyebrow-dot {
-      width: 6px;
-      height: 6px;
-      background: var(--accent-olive);
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-
-    .hero__eyebrow-text {
-      font-size: var(--text-xs);
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--accent-olive);
-    }
-
-    .hero__headline {
-      font-family: var(--font-serif);
-      font-size: clamp(2.4rem, 4.5vw, 3.5rem);
-      font-weight: 500;
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-      color: var(--text-primary);
-      margin-bottom: var(--space-6);
-    }
-
-    .hero__headline em {
-      font-style: italic;
-      color: var(--accent-olive);
-    }
-
-    .hero__sub {
-      font-size: var(--text-lg);
-      font-weight: 400;
-      color: var(--text-secondary);
-      line-height: 1.65;
-      margin-bottom: var(--space-10);
-      max-width: 480px;
-    }
-
-    .hero__ctas {
-      display: flex;
-      align-items: center;
-      gap: var(--space-4);
-      flex-wrap: wrap;
-      margin-bottom: var(--space-12);
-    }
-
-    .hero__credentials {
-      display: flex;
-      align-items: center;
-      gap: var(--space-6);
-      padding-top: var(--space-6);
-      border-top: 1px solid var(--border-subtle);
-    }
-
-    .hero__cred-item {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-1);
-    }
-
-    .hero__cred-label {
-      font-size: var(--text-xs);
-      color: var(--text-muted);
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    .hero__cred-value {
-      font-family: var(--font-serif);
-      font-size: var(--text-base);
-      font-weight: 600;
-      color: var(--text-primary);
-    }
-
-    .hero__cred-divider {
-      width: 1px;
-      height: 32px;
-      background: var(--border-medium);
-      flex-shrink: 0;
-    }
-
-    .hero__visual {
-      height: 100%;
-      min-height: 100svh;
-      display: flex;
-      align-items: stretch;
-      padding: var(--space-6) var(--space-6) var(--space-6) var(--space-6);
-    }
-
-    .hero__image-wrap {
-      flex: 1;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      position: relative;
-      margin-top: 68px;
-      background: var(--bg-accent);
-      display: flex;
-      align-items: flex-end;
-      min-height: 500px;
-    }
-
-    .hero__image-placeholder {
-      width: 100%;
-      height: 100%;
-      min-height: 500px;
-      background: var(--bg-accent);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: var(--space-3);
-    }
-
-    .hero__image-placeholder svg {
-      width: 48px;
-      height: 48px;
-      color: var(--accent-light);
-      opacity: 0.6;
-    }
-
-    .hero__image-placeholder-label {
-      font-size: var(--text-xs);
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
-
-    .hero__badge {
-      position: absolute;
-      bottom: var(--space-6);
-      left: var(--space-6);
-      right: var(--space-6);
-      background: rgba(250, 250, 248, 0.94);
-      backdrop-filter: blur(8px);
-      border-radius: var(--radius-md);
-      padding: var(--space-4) var(--space-5);
-      display: flex;
-      align-items: center;
-      gap: var(--space-3);
-      box-shadow: var(--shadow-md);
-    }
-
-    .hero__badge-icon {
-      width: 36px;
-      height: 36px;
-      background: var(--accent-olive);
-      border-radius: var(--radius-sm);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .hero__badge-icon svg {
-      width: 18px;
-      height: 18px;
-      color: #fff;
-    }
-
-    .hero__badge-text {
-      flex: 1;
-    }
-
-    .hero__badge-title {
-      font-size: var(--text-sm);
-      font-weight: 600;
-      color: var(--text-primary);
-      line-height: 1.2;
-    }
-
-    .hero__badge-desc {
-      font-size: var(--text-xs);
+      letter-spacing: 0.25em;
       color: var(--text-muted);
       margin-top: 2px;
     }
 
-    /* =============================================
-       SEÇÃO — DOR / IDENTIFICAÇÃO
-    ============================================= */
-    .section-pain {
-      background: var(--bg-secondary);
-      padding: var(--space-24) 0;
+    .nav-link {
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: var(--transition);
+      margin-left: 2rem;
     }
 
-    .pain__grid {
+    .nav-link:hover {
+      color: var(--brand-olive);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    @media (max-width: 991px) {
+      .nav-links {
+        display: none;
+      }
+    }
+
+    /* HERO SECTION */
+    .hero {
+      padding: 3.5rem 0 5rem;
+      position: relative;
+      background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-subtle) 100%);
+    }
+
+    .hero-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-16);
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3.5rem;
       align-items: center;
     }
 
-    .pain__content {}
-
-    .pain__headline {
-      font-family: var(--font-serif);
-      font-size: clamp(1.8rem, 3vw, 2.5rem);
-      font-weight: 500;
-      line-height: 1.25;
-      letter-spacing: -0.01em;
-      color: var(--text-primary);
-      margin-bottom: var(--space-8);
+    .hero-content {
+      max-width: 620px;
     }
 
-    .pain__list {
+    .hero-title {
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-description {
+      font-size: 1.15rem;
+      margin-bottom: 2rem;
+      color: var(--text-muted);
+    }
+
+    .hero-bullets {
       list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-4);
+      margin-bottom: 2.25rem;
     }
 
-    .pain__item {
-      display: flex;
-      align-items: flex-start;
-      gap: var(--space-4);
-      padding: var(--space-5);
-      background: var(--bg-primary);
-      border-radius: var(--radius-md);
-      border: 1px solid var(--border-subtle);
-      transition: border-color var(--transition), box-shadow var(--transition);
-    }
-
-    .pain__item:hover {
-      border-color: var(--border-medium);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .pain__item-check {
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background: var(--bg-accent);
-      border: 1px solid var(--border-medium);
+    .hero-bullets li {
       display: flex;
       align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      margin-top: 1px;
+      gap: 0.75rem;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-main);
+      margin-bottom: 0.75rem;
     }
 
-    .pain__item-check svg {
-      width: 10px;
-      height: 10px;
-      color: var(--accent-olive);
+    .hero-bullets li i {
+      color: var(--brand-olive);
+      font-size: 1.1rem;
     }
 
-    .pain__item-text {
-      font-size: var(--text-base);
-      color: var(--text-secondary);
-      line-height: 1.55;
-    }
-
-    .pain__transition {
-      margin-top: var(--space-8);
-      padding-top: var(--space-6);
-      border-top: 1px solid var(--border-medium);
-      font-size: var(--text-base);
-      color: var(--text-secondary);
-      line-height: 1.7;
-      font-style: italic;
-      font-family: var(--font-serif);
-      font-size: var(--text-xl);
-    }
-
-    .pain__visual {
+    .hero-ctas {
       display: flex;
       flex-direction: column;
-      gap: var(--space-4);
+      gap: 0.75rem;
     }
 
-    .pain__quote {
-      background: var(--bg-dark);
-      border-radius: var(--radius-lg);
-      padding: var(--space-10) var(--space-8);
-      color: var(--text-inverse);
+    .microcopy {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .microcopy i {
+      color: var(--brand-olive);
+    }
+
+    /* Placeholder styling */
+    .media-placeholder {
+      width: 100%;
+      background-color: var(--bg-subtle);
+      border: 2px dashed rgba(74, 93, 78, 0.25);
+      border-radius: var(--radius-md);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
       position: relative;
       overflow: hidden;
+      box-shadow: var(--shadow-card);
+      transition: var(--transition);
     }
 
-    .pain__quote::before {
-      content: '\201C';
-      font-family: var(--font-serif);
-      font-size: 8rem;
-      color: var(--accent-olive);
-      opacity: 0.25;
+    .media-placeholder i {
+      font-size: 2.5rem;
+      color: var(--brand-olive-light);
+      margin-bottom: 1rem;
+    }
+
+    .media-placeholder span {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--brand-olive);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .media-placeholder small {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+    }
+
+    .hero-media-wrapper {
+      position: relative;
+    }
+
+    .hero-placeholder {
+      aspect-ratio: 4 / 5;
+      border-radius: var(--radius-lg);
+      border: 1.5px solid rgba(74, 93, 78, 0.2);
+    }
+
+    .hero-badge-floating {
       position: absolute;
-      top: -1.5rem;
-      left: 1.5rem;
-      line-height: 1;
-    }
-
-    .pain__quote-text {
-      font-family: var(--font-serif);
-      font-size: var(--text-2xl);
-      font-weight: 400;
-      line-height: 1.45;
-      font-style: italic;
-      position: relative;
-      z-index: 1;
-    }
-
-    .pain__quote-source {
-      margin-top: var(--space-5);
-      font-size: var(--text-xs);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent-light);
-      position: relative;
-      z-index: 1;
-    }
-
-    /* =============================================
-       SEÇÃO — ABORDAGEM / DIFERENCIAL
-    ============================================= */
-    .section-approach {
-      padding: var(--space-24) 0;
-      background: var(--bg-primary);
-    }
-
-    .approach__header {
-      max-width: 660px;
-      margin: 0 auto var(--space-16);
-      text-align: center;
-    }
-
-    .approach__headline {
-      font-family: var(--font-serif);
-      font-size: clamp(2rem, 3.5vw, 3rem);
-      font-weight: 500;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-      color: var(--text-primary);
-      margin-bottom: var(--space-6);
-    }
-
-    .approach__intro {
-      font-size: var(--text-lg);
-      color: var(--text-secondary);
-      line-height: 1.7;
-    }
-
-    .approach__intro strong {
-      color: var(--text-primary);
-      font-weight: 500;
-    }
-
-    .approach__pillars {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-6);
-      margin-top: var(--space-12);
-    }
-
-    .pillar {
-      padding: var(--space-8) var(--space-7);
-      background: var(--bg-secondary);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border-subtle);
-      transition: transform var(--transition), box-shadow var(--transition);
-    }
-
-    .pillar:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-md);
-    }
-
-    .pillar__number {
-      font-family: var(--font-serif);
-      font-size: var(--text-5xl);
-      font-weight: 400;
-      color: var(--accent-light);
-      line-height: 1;
-      margin-bottom: var(--space-5);
-      opacity: 0.7;
-    }
-
-    .pillar__title {
-      font-family: var(--font-serif);
-      font-size: var(--text-xl);
-      font-weight: 600;
-      color: var(--text-primary);
-      margin-bottom: var(--space-3);
-      line-height: 1.3;
-    }
-
-    .pillar__desc {
-      font-size: var(--text-sm);
-      color: var(--text-secondary);
-      line-height: 1.65;
-    }
-
-    /* =============================================
-       SEÇÃO — SERVIÇOS
-    ============================================= */
-    .section-services {
-      padding: var(--space-24) 0;
-      background: var(--bg-secondary);
-    }
-
-    .services__header {
-      margin-bottom: var(--space-12);
-    }
-
-    .services__headline {
-      font-family: var(--font-serif);
-      font-size: clamp(1.8rem, 3vw, 2.5rem);
-      font-weight: 500;
-      line-height: 1.2;
-      letter-spacing: -0.01em;
-      color: var(--text-primary);
-      margin-bottom: var(--space-4);
-    }
-
-    .services__intro {
-      font-size: var(--text-base);
-      color: var(--text-secondary);
-      line-height: 1.7;
-      max-width: 600px;
-    }
-
-    .services__grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: var(--space-4);
-    }
-
-    .service-card {
-      background: var(--bg-primary);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border-subtle);
-      padding: var(--space-8) var(--space-7);
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-4);
-      transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
-      cursor: default;
-    }
-
-    .service-card:hover {
-      border-color: var(--accent-light);
-      box-shadow: var(--shadow-md);
-      transform: translateY(-2px);
-    }
-
-    .service-card--featured {
-      grid-column: span 2;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-10);
-      align-items: center;
-      padding: var(--space-10) var(--space-10);
-    }
-
-    .service-card__tag {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-2);
-      background: var(--bg-accent);
-      border-radius: var(--radius-full);
-      padding: var(--space-1) var(--space-3);
-      font-size: var(--text-xs);
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--accent-dark);
-      width: fit-content;
-    }
-
-    .service-card__title {
-      font-family: var(--font-serif);
-      font-size: var(--text-2xl);
-      font-weight: 600;
-      color: var(--text-primary);
-      line-height: 1.25;
-    }
-
-    .service-card__desc {
-      font-size: var(--text-sm);
-      color: var(--text-secondary);
-      line-height: 1.7;
-    }
-
-    .service-card__for {
-      margin-top: var(--space-2);
-      display: flex;
-      align-items: flex-start;
-      gap: var(--space-2);
-    }
-
-    .service-card__for-label {
-      font-size: var(--text-xs);
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--accent-olive);
-      white-space: nowrap;
-      margin-top: 1px;
-    }
-
-    .service-card__for-text {
-      font-size: var(--text-xs);
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-
-    .service-card__visual {
-      background: var(--bg-accent);
+      bottom: -1.5rem;
+      left: -1.5rem;
+      background: var(--bg-surface);
+      padding: 1.25rem 1.5rem;
       border-radius: var(--radius-md);
-      aspect-ratio: 4/3;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: var(--space-3);
-    }
-
-    .service-card__visual svg {
-      width: 40px;
-      height: 40px;
-      color: var(--accent-light);
-      opacity: 0.5;
-    }
-
-    .service-card__visual-label {
-      font-size: var(--text-xs);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
-
-    .services__cta-wrap {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: var(--space-3);
-      margin-top: var(--space-12);
-      text-align: center;
-    }
-
-    .services__cta-hint {
-      font-size: var(--text-sm);
-      color: var(--text-muted);
-    }
-
-    /* =============================================
-       SEÇÃO — PROVA SOCIAL
-    ============================================= */
-    .section-proof {
-      padding: var(--space-24) 0;
-      background: var(--bg-primary);
-    }
-
-    .proof__header {
-      text-align: center;
-      max-width: 560px;
-      margin: 0 auto var(--space-12);
-    }
-
-    .proof__headline {
-      font-family: var(--font-serif);
-      font-size: clamp(2rem, 3.5vw, 2.75rem);
-      font-weight: 500;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-      color: var(--text-primary);
-      margin-bottom: var(--space-4);
-    }
-
-    .proof__sub {
-      font-size: var(--text-base);
-      color: var(--text-secondary);
-      line-height: 1.65;
-      font-family: var(--font-serif);
-      font-style: italic;
-      font-size: var(--text-xl);
-    }
-
-    .proof__gallery {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-4);
-      margin-bottom: var(--space-8);
-    }
-
-    .proof__item {
-      position: relative;
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      background: var(--bg-accent);
-    }
-
-    .proof__item:first-child {
-      grid-row: span 2;
-    }
-
-    .proof__item-inner {
-      width: 100%;
-      height: 100%;
-      min-height: 200px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: var(--space-3);
-      padding: var(--space-6);
-    }
-
-    .proof__item:first-child .proof__item-inner {
-      min-height: 420px;
-    }
-
-    .proof__item-inner svg {
-      width: 36px;
-      height: 36px;
-      color: var(--accent-light);
-      opacity: 0.5;
-    }
-
-    .proof__item-label {
-      font-size: var(--text-xs);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      text-align: center;
-    }
-
-    .proof__caption {
-      text-align: center;
-      font-size: var(--text-sm);
-      color: var(--text-muted);
-      line-height: 1.6;
-      max-width: 500px;
-      margin: 0 auto;
-    }
-
-    /* =============================================
-       SEÇÃO — EQUIPE
-    ============================================= */
-    .section-team {
-      padding: var(--space-24) 0;
-      background: var(--bg-dark);
-      color: var(--text-inverse);
-    }
-
-    .section-team .section-label {
-      color: var(--accent-light);
-    }
-
-    .section-team .section-label::before {
-      background: var(--accent-light);
-    }
-
-    .team__headline {
-      font-family: var(--font-serif);
-      font-size: clamp(2rem, 3.5vw, 2.75rem);
-      font-weight: 500;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-      color: var(--text-inverse);
-      margin-bottom: var(--space-12);
-    }
-
-    .team__grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: var(--space-6);
-    }
-
-    .team__card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .team__card-photo {
-      aspect-ratio: 4/3;
-      background: rgba(255,255,255,0.06);
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: var(--space-3);
-    }
-
-    .team__card-photo svg {
-      width: 48px;
-      height: 48px;
-      color: var(--accent-light);
-      opacity: 0.3;
-    }
-
-    .team__card-photo-label {
-      font-size: var(--text-xs);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.3);
-    }
-
-    .team__card-body {
-      padding: var(--space-8);
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-4);
-    }
-
-    .team__card-name {
-      font-family: var(--font-serif);
-      font-size: var(--text-2xl);
-      font-weight: 600;
-      color: var(--text-inverse);
-    }
-
-    .team__card-role {
-      font-size: var(--text-xs);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent-light);
-      margin-top: -var(--space-2);
-    }
-
-    .team__card-quote {
-      font-family: var(--font-serif);
-      font-size: var(--text-lg);
-      font-style: italic;
-      color: rgba(255,255,255,0.65);
-      line-height: 1.6;
-      border-left: 2px solid var(--accent-olive);
-      padding-left: var(--space-4);
-    }
-
-    .team__credentials {
-      margin-top: var(--space-12);
-      padding-top: var(--space-8);
-      border-top: 1px solid rgba(255,255,255,0.08);
+      box-shadow: var(--shadow-hover);
       display: flex;
       align-items: center;
-      gap: var(--space-8);
-    }
-
-    .team__credential {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-1);
-    }
-
-    .team__credential-label {
-      font-size: var(--text-xs);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.35);
-    }
-
-    .team__credential-value {
-      font-size: var(--text-base);
-      color: rgba(255,255,255,0.7);
-      font-weight: 500;
-    }
-
-    .team__credential-divider {
-      width: 1px;
-      height: 36px;
-      background: rgba(255,255,255,0.1);
-    }
-
-    /* =============================================
-       SEÇÃO — ESPAÇO
-    ============================================= */
-    .section-space {
-      padding: var(--space-24) 0;
-      background: var(--bg-secondary);
-    }
-
-    .space__grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-16);
-      align-items: center;
-    }
-
-    .space__content {}
-
-    .space__headline {
-      font-family: var(--font-serif);
-      font-size: clamp(1.8rem, 3vw, 2.5rem);
-      font-weight: 500;
-      line-height: 1.2;
-      letter-spacing: -0.01em;
-      color: var(--text-primary);
-      margin-bottom: var(--space-5);
-    }
-
-    .space__quote {
-      font-family: var(--font-serif);
-      font-size: var(--text-xl);
-      font-style: italic;
-      color: var(--text-secondary);
-      line-height: 1.6;
-      margin-bottom: var(--space-8);
-      padding-left: var(--space-5);
-      border-left: 2px solid var(--accent-olive);
-    }
-
-    .space__attributes {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-3);
-    }
-
-    .space__attr {
-      display: flex;
-      align-items: center;
-      gap: var(--space-3);
-      font-size: var(--text-sm);
-      color: var(--text-secondary);
-    }
-
-    .space__attr-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent-olive);
-      flex-shrink: 0;
-    }
-
-    .space__gallery {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto auto;
-      gap: var(--space-4);
-    }
-
-    .space__img {
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      background: var(--bg-accent);
-    }
-
-    .space__img:first-child {
-      grid-column: span 2;
-      aspect-ratio: 16/9;
-    }
-
-    .space__img:not(:first-child) {
-      aspect-ratio: 4/3;
-    }
-
-    .space__img-inner {
-      width: 100%;
-      height: 100%;
-      min-height: 140px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: var(--space-2);
-    }
-
-    .space__img-inner svg {
-      width: 32px;
-      height: 32px;
-      color: var(--accent-light);
-      opacity: 0.5;
-    }
-
-    .space__img-label {
-      font-size: var(--text-xs);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
-
-    /* =============================================
-       SEÇÃO — LOCALIZAÇÃO
-    ============================================= */
-    .section-location {
-      padding: var(--space-24) 0;
-      background: var(--bg-primary);
-    }
-
-    .location__grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-12);
-      align-items: start;
-    }
-
-    .location__headline {
-      font-family: var(--font-serif);
-      font-size: clamp(1.8rem, 3vw, 2.5rem);
-      font-weight: 500;
-      line-height: 1.2;
-      letter-spacing: -0.01em;
-      color: var(--text-primary);
-      margin-bottom: var(--space-8);
-    }
-
-    .location__address {
-      margin-bottom: var(--space-8);
-    }
-
-    .location__address-line {
-      font-size: var(--text-lg);
-      color: var(--text-primary);
-      font-weight: 500;
-      line-height: 1.5;
-    }
-
-    .location__address-city {
-      font-size: var(--text-base);
-      color: var(--text-secondary);
-      margin-top: var(--space-1);
-    }
-
-    .location__whatsapp {
-      display: flex;
-      align-items: center;
-      gap: var(--space-3);
-      margin-bottom: var(--space-8);
-      font-size: var(--text-base);
-      color: var(--text-secondary);
-    }
-
-    .location__whatsapp-icon {
-      width: 20px;
-      height: 20px;
-      color: var(--accent-olive);
-    }
-
-    .location__map {
-      background: var(--bg-accent);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      aspect-ratio: 16/10;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: var(--space-4);
-      border: 1px solid var(--border-subtle);
-    }
-
-    .location__map svg {
-      width: 48px;
-      height: 48px;
-      color: var(--accent-light);
-      opacity: 0.5;
-    }
-
-    .location__map-label {
-      font-size: var(--text-sm);
-      color: var(--text-muted);
-      text-align: center;
+      gap: 1rem;
+      border-left: 4px solid var(--brand-olive);
       max-width: 280px;
-      line-height: 1.5;
     }
 
-    .location__map-link {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-2);
-      font-size: var(--text-xs);
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--accent-olive);
-      border-bottom: 1px solid var(--accent-light);
-      padding-bottom: 1px;
-      transition: color var(--transition), border-color var(--transition);
+    .hero-badge-floating i {
+      font-size: 1.8rem;
+      color: var(--brand-gold);
     }
 
-    .location__map-link:hover {
-      color: var(--accent-dark);
-      border-color: var(--accent-dark);
+    .hero-badge-text p {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin: 0;
     }
 
-    /* =============================================
-       SEÇÃO — CTA FINAL
-    ============================================= */
-    .section-final-cta {
-      padding: var(--space-24) 0;
-      background: var(--bg-secondary);
+    .hero-badge-text span {
+      font-size: 0.75rem;
+      color: var(--text-muted);
     }
 
-    .final-cta__inner {
-      background: var(--bg-dark);
-      border-radius: var(--radius-lg);
-      padding: var(--space-20) var(--space-16);
-      text-align: center;
+    @media (max-width: 991px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .hero-content {
+        max-width: 100%;
+      }
+      .hero-badge-floating {
+        left: 1rem;
+        bottom: 1rem;
+      }
+    }
+
+    /* SECTION 2: DOR & DIAGNÓSTICO */
+    .section-pain {
+      background-color: var(--bg-surface);
       position: relative;
-      overflow: hidden;
     }
 
-    .final-cta__inner::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(107, 122, 92, 0.15) 0%, transparent 70%);
-      pointer-events: none;
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3.5rem;
     }
 
-    .final-cta__eyebrow {
-      font-size: var(--text-xs);
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent-light);
-      margin-bottom: var(--space-6);
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
     }
 
-    .final-cta__headline {
-      font-family: var(--font-serif);
-      font-size: clamp(2rem, 4vw, 3.25rem);
-      font-weight: 400;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-      color: var(--text-inverse);
-      margin-bottom: var(--space-6);
-      max-width: 640px;
-      margin-left: auto;
-      margin-right: auto;
+    .pain-card {
+      background-color: var(--bg-primary);
+      padding: 2rem;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(74, 93, 78, 0.08);
+      transition: var(--transition);
+      position: relative;
     }
 
-    .final-cta__headline em {
-      font-style: italic;
-      color: var(--accent-light);
+    .pain-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card);
+      border-color: rgba(74, 93, 78, 0.2);
     }
 
-    .final-cta__text {
-      font-size: var(--text-base);
-      color: rgba(255,255,255,0.6);
-      line-height: 1.7;
-      max-width: 480px;
-      margin: 0 auto var(--space-10);
+    .pain-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background-color: var(--brand-olive-subtle);
+      color: var(--brand-olive);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      margin-bottom: 1.25rem;
     }
 
-    .final-cta__quote {
-      font-family: var(--font-serif);
-      font-size: var(--text-lg);
-      font-style: italic;
-      color: rgba(255,255,255,0.45);
-      margin-top: var(--space-10);
-      padding-top: var(--space-8);
-      border-top: 1px solid rgba(255,255,255,0.08);
+    .pain-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.75rem;
     }
 
-    /* =============================================
-       FOOTER
-    ============================================= */
-    .footer {
-      background: var(--bg-dark);
-      padding: var(--space-12) 0;
-      border-top: 1px solid rgba(255,255,255,0.06);
+    .pain-card p {
+      font-size: 0.95rem;
     }
 
-    .footer__inner {
+    .pain-banner {
+      background: linear-gradient(135deg, var(--bg-dark) 0%, #2D3A31 100%);
+      color: var(--text-light);
+      padding: 2.5rem;
+      border-radius: var(--radius-lg);
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .pain-banner-content h3 {
+      color: #FFFFFF;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .pain-banner-content p {
+      color: rgba(255, 255, 255, 0.8);
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .pain-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1.5rem;
+      }
+    }
+
+    /* SECTION 3: ABORDAGEM & PILARES */
+    .section-pillars {
+      background-color: var(--bg-primary);
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .pillar-card {
+      background: var(--bg-surface);
+      padding: 2.5rem 2rem;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-subtle);
+      border: 1px solid rgba(74, 93, 78, 0.06);
+      text-align: center;
+      position: relative;
+    }
+
+    .pillar-number {
+      font-family: var(--font-heading);
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--brand-olive-subtle);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .pillar-card h3 {
+      color: var(--brand-olive);
+      margin-bottom: 1rem;
+    }
+
+    @media (max-width: 991px) {
+      .pillars-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* SECTION 4: SERVIÇOS & SOLUÇÕES */
+    .section-services {
+      background-color: var(--bg-subtle);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    .service-card {
+      background-color: var(--bg-surface);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      box-shadow: var(--shadow-subtle);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition);
+      border: 1px solid rgba(74, 93, 78, 0.08);
+    }
+
+    .service-card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-4px);
+    }
+
+    .service-header {
+      margin-bottom: 1.5rem;
+    }
+
+    .service-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--brand-gold);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .service-card h3 {
+      font-size: 1.5rem;
+      color: var(--text-main);
+      margin-bottom: 0.75rem;
+    }
+
+    .service-body p {
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-features {
+      list-style: none;
+      margin-bottom: 2rem;
+      border-top: 1px solid var(--bg-subtle);
+      padding-top: 1.25rem;
+    }
+
+    .service-features li {
+      font-size: 0.9rem;
+      color: var(--text-main);
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+    }
+
+    .service-features li i {
+      color: var(--brand-olive);
+      font-size: 0.85rem;
+      margin-top: 0.2rem;
+    }
+
+    @media (max-width: 991px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* SECTION 5: PROVA SOCIAL */
+    .section-proof {
+      background-color: var(--bg-surface);
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .proof-placeholder {
+      aspect-ratio: 4 / 5;
+      border-radius: var(--radius-md);
+    }
+
+    .proof-disclaimer {
+      text-align: center;
+      background-color: var(--bg-primary);
+      padding: 1.5rem;
+      border-radius: var(--radius-md);
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border: 1px solid rgba(74, 93, 78, 0.1);
+    }
+
+    @media (max-width: 768px) {
+      .proof-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* SECTION 6: SOBRE A EQUIPE E CORPO CLÍNICO */
+    .section-about {
+      background-color: var(--bg-primary);
+    }
+
+    .about-card {
+      background: var(--bg-surface);
+      border-radius: var(--radius-lg);
+      padding: 3rem;
+      box-shadow: var(--shadow-card);
+      margin-bottom: 3rem;
+      border: 1px solid rgba(74, 93, 78, 0.08);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .about-media {
+      aspect-ratio: 1 / 1;
+      border-radius: var(--radius-md);
+    }
+
+    .about-content h3 {
+      font-size: 1.8rem;
+      color: var(--brand-olive);
+      margin-bottom: 0.25rem;
+    }
+
+    .about-role {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--brand-gold);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+
+    .about-credentials {
+      list-style: none;
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--bg-subtle);
+    }
+
+    .about-credentials li {
+      font-size: 0.95rem;
+      color: var(--text-main);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .about-credentials li i {
+      color: var(--brand-olive);
+    }
+
+    @media (max-width: 991px) {
+      .about-card {
+        padding: 2rem 1.5rem;
+      }
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    /* SECTION 7: O ESPAÇO & AMBIENTE */
+    .section-space {
+      background-color: var(--bg-subtle);
+    }
+
+    .space-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .space-placeholder {
+      aspect-ratio: 16 / 10;
+      border-radius: var(--radius-md);
+    }
+
+    .space-features {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
       flex-wrap: wrap;
-      gap: var(--space-6);
     }
 
-    .footer__brand {
-      font-family: var(--font-serif);
-      font-size: var(--text-lg);
+    .space-feature-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
       font-weight: 600;
-      color: var(--text-inverse);
+      color: var(--brand-olive);
     }
 
-    .footer__info {
-      font-size: var(--text-xs);
-      color: rgba(255,255,255,0.35);
-      text-align: right;
-      line-height: 1.7;
+    @media (max-width: 768px) {
+      .space-grid {
+        grid-template-columns: 1fr;
+      }
+      .space-features {
+        gap: 1.5rem;
+        flex-direction: column;
+        align-items: center;
+      }
     }
 
-    .footer__info a {
-      color: rgba(255,255,255,0.5);
-      transition: color var(--transition);
+    /* SECTION 8: LOCALIZAÇÃO & ATENDIMENTO */
+    .section-location {
+      background-color: var(--bg-surface);
     }
 
-    .footer__info a:hover {
-      color: rgba(255,255,255,0.8);
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
     }
 
-    /* =============================================
-       FLOATING WhatsApp
-    ============================================= */
-    .float-wa {
+    .location-info h3 {
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .location-details {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .location-details li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+    }
+
+    .location-details li i {
+      color: var(--brand-olive);
+      font-size: 1.25rem;
+      margin-top: 0.2rem;
+    }
+
+    .map-placeholder {
+      aspect-ratio: 4 / 3;
+      border-radius: var(--radius-lg);
+    }
+
+    @media (max-width: 991px) {
+      .location-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* SECTION 9: CTA FINAL & FAQ */
+    .section-cta-final {
+      background: linear-gradient(135deg, var(--bg-dark) 0%, #17201B 100%);
+      color: var(--text-light);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-final-card {
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto;
+      padding: 2rem 0;
+    }
+
+    .cta-final-card h2 {
+      color: #FFFFFF;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      margin-bottom: 1.25rem;
+    }
+
+    .cta-final-card p {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 1.15rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .faq-container {
+      max-width: 800px;
+      margin: 4rem auto 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: 3rem;
+    }
+
+    .faq-title {
+      color: #FFFFFF;
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+    }
+
+    .faq-item {
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      padding: 1.25rem 1.5rem;
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: #FFFFFF;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-answer {
+      padding: 0 1.5rem 1.25rem;
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 0.95rem;
+      display: none;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    .faq-item.active .faq-question i {
+      transform: rotate(180deg);
+    }
+
+    /* FOOTER */
+    .footer {
+      background-color: #121814;
+      color: rgba(255, 255, 255, 0.6);
+      padding: 3rem 0 1.5rem;
+      font-size: 0.85rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .footer-logo {
+      color: #FFFFFF;
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    /* FLOATING WHATSAPP BUTTON MOBILE */
+    .floating-whatsapp {
       position: fixed;
-      bottom: var(--space-6);
-      right: var(--space-6);
-      z-index: 200;
-      width: 56px;
-      height: 56px;
-      background: #25D366;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      z-index: 999;
+      background-color: var(--cta-green);
+      color: #FFFFFF;
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35);
-      transition: transform var(--transition), box-shadow var(--transition);
-      cursor: pointer;
+      font-size: 1.8rem;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      text-decoration: none;
+      transition: var(--transition);
     }
 
-    .float-wa:hover {
-      transform: scale(1.08);
-      box-shadow: 0 6px 24px rgba(37, 211, 102, 0.45);
-    }
-
-    .float-wa svg {
-      width: 28px;
-      height: 28px;
-      color: #fff;
-    }
-
-    /* =============================================
-       MOBILE — 768px e abaixo
-    ============================================= */
-    @media (max-width: 768px) {
-      :root {
-        --space-24: 4rem;
-        --space-20: 3.5rem;
-        --space-16: 3rem;
-        --space-12: 2.5rem;
-      }
-
-      .container {
-        padding: 0 var(--space-5);
-      }
-
-      /* Header */
-      .header__brand-sub {
-        display: none;
-      }
-
-      /* Hero — empilhado */
-      .hero {
-        display: flex;
-        flex-direction: column;
-        min-height: auto;
-        padding-top: 68px;
-      }
-
-      .hero__content {
-        padding: var(--space-10) 0 var(--space-8);
-        max-width: 100%;
-        margin-left: 0;
-        order: 2;
-      }
-
-      .hero__visual {
-        order: 1;
-        min-height: auto;
-        padding: var(--space-4) 0 0;
-      }
-
-      .hero__image-wrap {
-        min-height: 280px;
-        margin-top: 0;
-      }
-
-      .hero__image-placeholder {
-        min-height: 280px;
-      }
-
-      .hero__badge {
-        bottom: var(--space-4);
-        left: var(--space-4);
-        right: var(--space-4);
-      }
-
-      .hero__headline {
-        font-size: clamp(2rem, 7vw, 2.5rem);
-      }
-
-      .hero__sub {
-        font-size: var(--text-base);
-      }
-
-      .hero__ctas {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .hero__ctas .btn {
-        text-align: center;
-        justify-content: center;
-      }
-
-      .hero__credentials {
-        flex-wrap: wrap;
-        gap: var(--space-4);
-      }
-
-      /* Pain */
-      .pain__grid {
-        grid-template-columns: 1fr;
-        gap: var(--space-10);
-      }
-
-      .pain__visual {
-        order: -1;
-      }
-
-      /* Approach */
-      .approach__pillars {
-        grid-template-columns: 1fr;
-        gap: var(--space-4);
-      }
-
-      /* Services */
-      .services__grid {
-        grid-template-columns: 1fr;
-      }
-
-      .service-card--featured {
-        grid-column: span 1;
-        grid-template-columns: 1fr;
-      }
-
-      .service-card--featured .service-card__visual {
-        display: none;
-      }
-
-      /* Proof */
-      .proof__gallery {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .proof__item:first-child {
-        grid-column: span 2;
-        grid-row: span 1;
-      }
-
-      .proof__item:first-child .proof__item-inner {
-        min-height: 200px;
-      }
-
-      /* Team */
-      .team__grid {
-        grid-template-columns: 1fr;
-      }
-
-      .team__credentials {
-        flex-wrap: wrap;
-        gap: var(--space-6);
-      }
-
-      .team__credential-divider {
-        display: none;
-      }
-
-      /* Space */
-      .space__grid {
-        grid-template-columns: 1fr;
-        gap: var(--space-10);
-      }
-
-      .space__gallery {
-        order: -1;
-      }
-
-      .space__img:first-child {
-        grid-column: span 2;
-      }
-
-      /* Location */
-      .location__grid {
-        grid-template-columns: 1fr;
-      }
-
-      /* Final CTA */
-      .final-cta__inner {
-        padding: var(--space-12) var(--space-6);
-        border-radius: var(--radius-md);
-      }
-
-      /* Footer */
-      .footer__inner {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .footer__info {
-        text-align: center;
-      }
-    }
-
-    /* =============================================
-       TABLET — 480–768px ajustes finos
-    ============================================= */
-    @media (min-width: 480px) and (max-width: 768px) {
-      .approach__pillars {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .pillar:last-child {
-        grid-column: span 2;
-      }
-    }
-
-    /* =============================================
-       FOCO / ACESSIBILIDADE
-    ============================================= */
-    :focus-visible {
-      outline: 2px solid var(--accent-olive);
-      outline-offset: 3px;
-    }
-
-    .btn:focus-visible {
-      outline-offset: 3px;
-    }
-
-    /* =============================================
-       ANIMAÇÕES SUAVES
-    ============================================= */
-    @media (prefers-reduced-motion: no-preference) {
-      .pillar,
-      .service-card,
-      .pain__item {
-        transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      * {
-        animation: none !important;
-        transition: none !important;
-      }
+    .floating-whatsapp:hover {
+      transform: scale(1.1);
+      background-color: var(--cta-green-hover);
     }
   </style>
 </head>
 <body>
 
-  <!-- ==========================================
-       HEADER
-  =========================================== -->
-  <header class="header" role="banner">
-    <div class="container">
-      <nav class="header__inner" aria-label="Navegação principal">
-        <a href="#" class="header__logo" aria-label="Sevvi Clínica Integrada — Página inicial">
-          <div class="header__logo-mark" aria-hidden="true">
-            <!-- Ícone folha/saúde — marca Sevvi -->
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M12 2C6 2 2 8 2 12c0 5.5 4.5 10 10 10s10-4.5 10-10C22 7 17 2 12 2z"/>
-              <path d="M12 7v10M7 12h10"/>
-            </svg>
-          </div>
-          <div class="header__brand">
-            <span class="header__brand-name">Sevvi</span>
-            <span class="header__brand-sub">Clínica Integrada</span>
-          </div>
-        </a>
-        <a href="https://wa.me/5522998505103" target="_blank" rel="noopener noreferrer" class="btn btn--primary header__cta" aria-label="Agendar avaliação pelo WhatsApp">
-          Agendar avaliação
-        </a>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="#" class="logo">
+        <span class="logo-text">SEVVI</span>
+        <span class="logo-tagline">CLÍNICA INTEGRADA</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#abordagem" class="nav-link">Abordagem</a>
+        <a href="#tratamentos" class="nav-link">Tratamentos</a>
+        <a href="#equipe" class="nav-link">Corpo Clínico</a>
+        <a href="#localizacao" class="nav-link">Localização</a>
       </nav>
+
+      <div class="header-actions">
+        <a href="https://wa.me/5522998505103?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20integrada%20na%20Sevvi." class="btn btn-primary" target="_blank">
+          <i class="fab fa-whatsapp"></i>
+          <span>Agendar Consulta</span>
+        </a>
+      </div>
     </div>
   </header>
 
-  <!-- ==========================================
-       HERO
-  =========================================== -->
-  <section class="hero" aria-label="Apresentação da Sevvi Clínica Integrada">
-    <div class="container" style="display: contents;">
+  <main>
 
-      <div class="hero__content" style="padding-left: var(--space-6);">
-        <div class="hero__eyebrow" aria-hidden="true">
-          <span class="hero__eyebrow-dot"></span>
-          <span class="hero__eyebrow-text">Clínica Integrada · Campos dos Goytacazes, RJ</span>
-        </div>
+    <!-- SECTION 1: HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="eyebrow"><i class="fas fa-map-marker-alt"></i> Campos dos Goytacazes, RJ</span>
+          <h1 class="hero-title">
+            Emagrecimento definitivo e equilíbrio hormonal <span class="text-highlight">começam pela raiz.</span>
+          </h1>
+          <p class="hero-description">
+            Uma abordagem médica integrada que investiga seu metabolismo, hormônios e estilo de vida para devolver sua vitalidade e autoestima sem fórmulas genéricas.
+          </p>
 
-        <h1 class="hero__headline">
-          Você não precisa de mais<br/>
-          um protocolo.<br/>
-          Precisa de alguém que<br/>
-          <em>entenda você de verdade.</em>
-        </h1>
-
-        <p class="hero__sub">
-          Aqui você não recebe um tratamento. Você recebe uma estratégia — construída a partir de quem você é, não de um protocolo padrão.
-        </p>
-
-        <div class="hero__ctas">
-          <a href="https://wa.me/5522998505103"
-             target="_blank"
-             rel="noopener noreferrer"
-             class="btn btn--primary btn--large"
-             aria-label="Agendar minha avaliação pelo WhatsApp">
-            <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-            </svg>
-            Agendar minha avaliação
-          </a>
-          <a href="#servicos" class="btn btn--ghost" aria-label="Ver tratamentos disponíveis">
-            Ver tratamentos
-          </a>
-        </div>
-
-        <div class="hero__credentials" aria-label="Credenciais da clínica">
-          <div class="hero__cred-item">
-            <span class="hero__cred-label">Registro</span>
-            <span class="hero__cred-value">CRM 1361872</span>
-          </div>
-          <div class="hero__cred-divider" aria-hidden="true"></div>
-          <div class="hero__cred-item">
-            <span class="hero__cred-label">Especialidades</span>
-            <span class="hero__cred-value">Medicina · Nutrição</span>
-          </div>
-          <div class="hero__cred-divider" aria-hidden="true"></div>
-          <div class="hero__cred-item">
-            <span class="hero__cred-label">Atendimento</span>
-            <span class="hero__cred-value">Presencial</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero__visual" aria-hidden="true">
-        <div class="hero__image-wrap">
-          <!-- PLACEHOLDER: Substituir pela foto profissional da Dra. Mariana em ambiente clínico -->
-          <!-- <img src="foto-dra-mariana.webp" alt="Dra. Mariana em consultório da Sevvi Clínica Integrada" width="600" height="800" style="width:100%; height:100%; object-fit:cover; object-position:center top;" loading="eager"> -->
-          <div class="hero__image-placeholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <circle cx="12" cy="8" r="4"/>
-              <path d="M4 20c0-4 3.58-7 8-7s8 3 8 7"/>
-            </svg>
-            <span class="hero__image-placeholder-label">FOTO — DRA. MARIANA<br/>Retrato profissional · Ambiente clínico</span>
-          </div>
-
-          <div class="hero__badge">
-            <div class="hero__badge-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-              </svg>
-            </div>
-            <div class="hero__badge-text">
-              <div class="hero__badge-title">Cuidado integral com olhar humano</div>
-              <div class="hero__badge-desc">Medicina Estética · Funcional · Nutrição</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ==========================================
-       DOR / IDENTIFICAÇÃO
-  =========================================== -->
-  <section class="section-pain" id="identificacao" aria-label="Situações que a Sevvi entende">
-    <div class="container">
-      <div class="pain__grid">
-
-        <div class="pain__content">
-          <span class="section-label" aria-hidden="true">Você se reconhece?</span>
-          <h2 class="pain__headline">
-            Você se reconhece em alguma dessas situações?
-          </h2>
-
-          <ul class="pain__list" role="list">
-            <li class="pain__item">
-              <span class="pain__item-check" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"/>
-                </svg>
-              </span>
-              <span class="pain__item-text">Os exames vieram normais, mas você não se sente bem.</span>
-            </li>
-            <li class="pain__item">
-              <span class="pain__item-check" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"/>
-                </svg>
-              </span>
-              <span class="pain__item-text">Você tenta emagrecer há meses e o peso simplesmente não sai.</span>
-            </li>
-            <li class="pain__item">
-              <span class="pain__item-check" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"/>
-                </svg>
-              </span>
-              <span class="pain__item-text">Tem uma fadiga que não passa, mesmo dormindo.</span>
-            </li>
-            <li class="pain__item">
-              <span class="pain__item-check" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"/>
-                </svg>
-              </span>
-              <span class="pain__item-text">Seu corpo parece ter mudado do nada, sem uma razão clara.</span>
-            </li>
-            <li class="pain__item">
-              <span class="pain__item-check" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"/>
-                </svg>
-              </span>
-              <span class="pain__item-text">Já fez tratamento antes e sentiu que recebeu o mesmo protocolo que qualquer outra pessoa.</span>
-            </li>
+          <ul class="hero-bullets">
+            <li><i class="fas fa-check-circle"></i> Acompanhamento médico contínuo e personalizado</li>
+            <li><i class="fas fa-check-circle"></i> Investigação profunda de causa raiz metabólica</li>
+            <li><i class="fas fa-check-circle"></i> Ambiente acolhedor e humanizado no Parque Tamandaré</li>
           </ul>
 
-          <p class="pain__transition">
-            Essas situações têm explicação. E na maioria das vezes, ela está em algum lugar que ainda não foi investigado com atenção suficiente.
-          </p>
-        </div>
-
-        <div class="pain__visual">
-          <div class="pain__quote" role="blockquote">
-            <p class="pain__quote-text">
-              Nem sempre "exame normal" significa que está tudo bem. O exame é uma foto. O corpo é um filme, e o sintoma fala.
-            </p>
-            <p class="pain__quote-source">Sevvi Clínica Integrada</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================
-       ABORDAGEM
-  =========================================== -->
-  <section class="section-approach" id="abordagem" aria-label="Como a Sevvi atende">
-    <div class="container">
-      <div class="approach__header">
-        <span class="section-label" aria-hidden="true">Nossa abordagem</span>
-        <h2 class="approach__headline">
-          Na Sevvi, a gente começa entendendo você.
-        </h2>
-        <p class="approach__intro">
-          Antes de qualquer procedimento, existe uma avaliação. Uma conversa real, onde o objetivo é entender o que está acontecendo com o seu corpo — não apenas o que aparece nos exames, mas o que você sente, como você funciona, o que já tentou e por que não funcionou.<br/><br/>
-          <strong>Só depois disso vem a estratégia.</strong>
-        </p>
-      </div>
-
-      <div class="approach__pillars">
-        <article class="pillar">
-          <div class="pillar__number" aria-hidden="true">01</div>
-          <h3 class="pillar__title">Avaliação que investiga a causa</h3>
-          <p class="pillar__desc">
-            Não partimos do sintoma. Partimos da origem. Metabolismo, tireoide, intestino, hormônios — tudo faz parte do diagnóstico antes de qualquer proposta.
-          </p>
-        </article>
-
-        <article class="pillar">
-          <div class="pillar__number" aria-hidden="true">02</div>
-          <h3 class="pillar__title">Acompanhamento clínico real</h3>
-          <p class="pillar__desc">
-            Você não fica sozinha no processo. Cada tratamento tem um acompanhamento estruturado, com profissionais que estão atentos à sua evolução.
-          </p>
-        </article>
-
-        <article class="pillar">
-          <div class="pillar__number" aria-hidden="true">03</div>
-          <h3 class="pillar__title">Estratégia personalizada</h3>
-          <p class="pillar__desc">
-            Não existe protocolo padrão na Sevvi. O que funciona para você foi pensado especificamente para você.
-          </p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================
-       SERVIÇOS
-  =========================================== -->
-  <section class="section-services" id="servicos" aria-label="Tratamentos disponíveis na Sevvi">
-    <div class="container">
-      <div class="services__header">
-        <span class="section-label" aria-hidden="true">Tratamentos</span>
-        <h2 class="services__headline">Tratamentos disponíveis</h2>
-        <p class="services__intro">
-          Cada serviço é parte de uma abordagem integrada. Nenhum deles funciona sozinho da forma certa — o que faz diferença é como são combinados dentro da sua estratégia de saúde.
-        </p>
-      </div>
-
-      <div class="services__grid">
-
-        <!-- Card em destaque — Emagrecimento Clínico -->
-        <article class="service-card service-card--featured">
-          <div>
-            <span class="service-card__tag">Emagrecimento</span>
-            <h3 class="service-card__title" style="margin-top: var(--space-4);">Emagrecimento Clínico</h3>
-            <p class="service-card__desc">
-              Para quem sente que o peso travou, que já tentou de tudo sem resultado duradouro ou que engorda com facilidade sem entender o motivo. O processo começa com análise metabólica — tireoide, intestino, resistência à insulina. O que não é investigado, não é tratado.
-            </p>
-            <div class="service-card__for" style="margin-top: var(--space-5);">
-              <span class="service-card__for-label">Para quem:</span>
-              <span class="service-card__for-text">Pessoas com histórico de tentativas sem resultado duradouro</span>
-            </div>
-          </div>
-          <div class="service-card__visual">
-            <!-- PLACEHOLDER: Foto de atendimento / consultório em uso -->
-            <!-- <img src="foto-atendimento.webp" alt="Consulta de emagrecimento clínico na Sevvi" width="500" height="380" style="width:100%; height:100%; object-fit:cover;" loading="lazy"> -->
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <path d="M9 12h6m-3-3v6m-7 3h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-            </svg>
-            <span class="service-card__visual-label">FOTO — ATENDIMENTO</span>
-          </div>
-        </article>
-
-        <!-- Saúde Hormonal -->
-        <article class="service-card">
-          <span class="service-card__tag">Hormônios</span>
-          <h3 class="service-card__title" style="margin-top: var(--space-3);">Saúde Hormonal</h3>
-          <p class="service-card__desc">
-            Para mulheres que perceberam mudanças no próprio corpo: cansaço excessivo, alterações de humor, dificuldade para dormir, falta de disposição. Na Sevvi, o implante hormonal faz parte de uma estratégia de acompanhamento — não é apenas um procedimento.
-          </p>
-          <div class="service-card__for">
-            <span class="service-card__for-label">Para quem:</span>
-            <span class="service-card__for-text">Mulheres em transição hormonal ou busca de equilíbrio</span>
-          </div>
-        </article>
-
-        <!-- Suporte Medicamentoso -->
-        <article class="service-card">
-          <span class="service-card__tag">Medicação</span>
-          <h3 class="service-card__title" style="margin-top: var(--space-3);">Suporte ao Emagrecimento</h3>
-          <p class="service-card__desc">
-            Para quem precisa de apoio adicional dentro de um processo clínico estruturado. A medicação complementa — não substitui — uma alimentação bem orientada e um plano de movimento. Aqui, os básicos vêm primeiro.
-          </p>
-          <div class="service-card__for">
-            <span class="service-card__for-label">Para quem:</span>
-            <span class="service-card__for-text">Pessoas em processo clínico que precisam de suporte adicional</span>
-          </div>
-        </article>
-
-        <!-- Nutrição Clínica -->
-        <article class="service-card">
-          <span class="service-card__tag">Nutrição</span>
-          <h3 class="service-card__title" style="margin-top: var(--space-3);">Nutrição Clínica</h3>
-          <p class="service-card__desc">
-            Para equilíbrio metabólico e nutricional. Análise de carências vitamínicas, suplementação estratégica e orientação alimentar integrada ao seu processo de saúde.
-          </p>
-          <div class="service-card__for">
-            <span class="service-card__for-label">Para quem:</span>
-            <span class="service-card__for-text">Quem busca equilíbrio metabólico e nutricional</span>
-          </div>
-        </article>
-
-        <!-- Hair Boost -->
-        <article class="service-card">
-          <span class="service-card__tag">Capilar</span>
-          <h3 class="service-card__title" style="margin-top: var(--space-3);">Hair Boost</h3>
-          <p class="service-card__desc">
-            Para quem percebeu queda de cabelo ou enfraquecimento capilar. Tratamento específico com acompanhamento clínico integrado ao cuidado geral da saúde.
-          </p>
-          <div class="service-card__for">
-            <span class="service-card__for-label">Para quem:</span>
-            <span class="service-card__for-text">Pessoas com queda ou enfraquecimento capilar</span>
-          </div>
-        </article>
-
-      </div>
-
-      <div class="services__cta-wrap">
-        <p class="services__cta-hint">Não sabe por onde começar? A avaliação inicial é o primeiro passo.</p>
-        <a href="https://wa.me/5522998505103"
-           target="_blank"
-           rel="noopener noreferrer"
-           class="btn btn--primary btn--large"
-           aria-label="Agendar avaliação pelo WhatsApp">
-          <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-          </svg>
-          Agendar minha avaliação
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================
-       PROVA SOCIAL
-  =========================================== -->
-  <section class="section-proof" id="resultados" aria-label="Transformações de clientes da Sevvi">
-    <div class="container">
-      <div class="proof__header">
-        <span class="section-label" aria-hidden="true">Resultados</span>
-        <h2 class="proof__headline">Transformações reais</h2>
-        <p class="proof__sub">
-          Resultado que aparece por fora, mas começa por dentro.
-        </p>
-      </div>
-
-      <div class="proof__gallery" aria-label="Galeria de resultados de clientes">
-        <!-- PLACEHOLDER: Fotos do destaque RESULTADOS do Instagram da Sevvi -->
-        <!-- Verificar autorização de uso de cada imagem antes de publicar -->
-
-        <div class="proof__item" role="img" aria-label="Foto de transformação — resultado de cliente Sevvi">
-          <div class="proof__item-inner">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-              <circle cx="8.5" cy="8.5" r="1.5"/>
-              <polyline points="21 15 16 10 5 21"/>
-            </svg>
-            <!-- Após adicionar imagem real: -->
-            <!-- <img src="resultado-1.webp" alt="Transformação de cliente — processo de emagrecimento clínico na Sevvi" width="400" height="600" style="width:100%; height:100%; object-fit:cover;" loading="lazy"> -->
-            <span class="proof__item-label">RESULTADO — Emagrecimento Clínico</span>
-          </div>
-        </div>
-
-        <div class="proof__item" role="img" aria-label="Foto de transformação — resultado hormonal">
-          <div class="proof__item-inner">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-              <circle cx="8.5" cy="8.5" r="1.5"/>
-              <polyline points="21 15 16 10 5 21"/>
-            </svg>
-            <!-- <img src="resultado-2.webp" alt="Transformação de cliente — equilíbrio hormonal na Sevvi" width="400" height="280" style="width:100%; height:100%; object-fit:cover;" loading="lazy"> -->
-            <span class="proof__item-label">RESULTADO — Saúde Hormonal</span>
-          </div>
-        </div>
-
-        <div class="proof__item" role="img" aria-label="Foto de transformação — resultado integrado">
-          <div class="proof__item-inner">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-              <circle cx="8.5" cy="8.5" r="1.5"/>
-              <polyline points="21 15 16 10 5 21"/>
-            </svg>
-            <!-- <img src="resultado-3.webp" alt="Transformação de cliente — saúde integrada na Sevvi" width="400" height="280" style="width:100%; height:100%; object-fit:cover;" loading="lazy"> -->
-            <span class="proof__item-label">RESULTADO — Saúde Integrada</span>
-          </div>
-        </div>
-      </div>
-
-      <p class="proof__caption">
-        Cada pessoa que passou pela Sevvi chegou com uma história diferente. E cada estratégia foi diferente também.
-      </p>
-    </div>
-  </section>
-
-  <!-- ==========================================
-       EQUIPE
-  =========================================== -->
-  <section class="section-team" id="equipe" aria-label="Equipe da Sevvi Clínica Integrada">
-    <div class="container">
-      <span class="section-label" aria-hidden="true">Quem cuida de você</span>
-      <h2 class="team__headline">Quem cuida de você na Sevvi</h2>
-
-      <div class="team__grid">
-
-        <article class="team__card">
-          <div class="team__card-photo" aria-label="Foto profissional da Dra. Mariana">
-            <!-- PLACEHOLDER: Foto profissional da Dra. Mariana -->
-            <!-- <img src="foto-dra-mariana-equipe.webp" alt="Dra. Mariana — Medicina Estética e Funcional na Sevvi" width="600" height="450" style="width:100%; height:100%; object-fit:cover; object-position:center top;" loading="lazy"> -->
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <circle cx="12" cy="8" r="4"/>
-              <path d="M4 20c0-4 3.58-7 8-7s8 3 8 7"/>
-            </svg>
-            <span class="team__card-photo-label">FOTO — DRA. MARIANA</span>
-          </div>
-          <div class="team__card-body">
-            <div>
-              <h3 class="team__card-name">Dra. Mariana</h3>
-              <p class="team__card-role">Medicina Estética · Medicina Funcional · Líder Clínica</p>
-            </div>
-            <blockquote class="team__card-quote">
-              "Cuidar vai muito além de um atendimento. É estar atento aos detalhes, acolher, ouvir e oferecer uma estratégia."
-            </blockquote>
-          </div>
-        </article>
-
-        <article class="team__card">
-          <div class="team__card-photo" aria-label="Foto profissional da Dra. Luma">
-            <!-- PLACEHOLDER: Foto profissional da Dra. Luma -->
-            <!-- <img src="foto-dra-luma.webp" alt="Dra. Luma — Nutrição Clínica na Sevvi" width="600" height="450" style="width:100%; height:100%; object-fit:cover; object-position:center top;" loading="lazy"> -->
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <circle cx="12" cy="8" r="4"/>
-              <path d="M4 20c0-4 3.58-7 8-7s8 3 8 7"/>
-            </svg>
-            <span class="team__card-photo-label">FOTO — DRA. LUMA</span>
-          </div>
-          <div class="team__card-body">
-            <div>
-              <h3 class="team__card-name">Dra. Luma</h3>
-              <p class="team__card-role">Nutrição Clínica</p>
-            </div>
-            <blockquote class="team__card-quote">
-              Especialista em nutrição funcional e metabolismo, integrada ao processo clínico da Sevvi para uma abordagem completa de saúde.
-            </blockquote>
-          </div>
-        </article>
-
-      </div>
-
-      <div class="team__credentials" aria-label="Credenciais da clínica">
-        <div class="team__credential">
-          <span class="team__credential-label">Registro Médico</span>
-          <span class="team__credential-value">CRM 1361872</span>
-        </div>
-        <div class="team__credential-divider" aria-hidden="true"></div>
-        <div class="team__credential">
-          <span class="team__credential-label">Verificação</span>
-          <span class="team__credential-value">Doctoralia</span>
-        </div>
-        <div class="team__credential-divider" aria-hidden="true"></div>
-        <div class="team__credential">
-          <span class="team__credential-label">Localização</span>
-          <span class="team__credential-value">Campos dos Goytacazes, RJ</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================
-       ESPAÇO
-  =========================================== -->
-  <section class="section-space" id="espaco" aria-label="Ambiente da Sevvi Clínica Integrada">
-    <div class="container">
-      <div class="space__grid">
-
-        <div class="space__content">
-          <span class="section-label" aria-hidden="true">O espaço</span>
-          <h2 class="space__headline">Um espaço pensado para fazer parte do cuidado</h2>
-          <blockquote class="space__quote">
-            "Cada detalhe da Sevvi foi pensado para fazer você se sentir bem antes mesmo do tratamento começar."
-          </blockquote>
-          <div class="space__attributes" aria-label="Características do ambiente">
-            <div class="space__attr">
-              <span class="space__attr-dot" aria-hidden="true"></span>
-              <span>Iluminação natural e warm em todos os ambientes</span>
-            </div>
-            <div class="space__attr">
-              <span class="space__attr-dot" aria-hidden="true"></span>
-              <span>Design minimalista com elementos naturais</span>
-            </div>
-            <div class="space__attr">
-              <span class="space__attr-dot" aria-hidden="true"></span>
-              <span>Recepção acolhedora com plantas e mobiliário contemporâneo</span>
-            </div>
-            <div class="space__attr">
-              <span class="space__attr-dot" aria-hidden="true"></span>
-              <span>Ambiente clínico humanizado — não hospitalar</span>
+          <div class="hero-ctas">
+            <a href="https://wa.me/5522998505103?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20minha%20avalia%C3%A7%C3%A3o%20integrada." class="btn btn-whatsapp pulse-effect" target="_blank">
+              <i class="fab fa-whatsapp" style="font-size: 1.2rem;"></i>
+              <span>AGENDAR AVALIAÇÃO INTEGRADA</span>
+            </a>
+            <div class="microcopy">
+              <i class="fas fa-shield-alt"></i> Atendimento presencial com CRM ativo e equipe multidisciplinar.
             </div>
           </div>
         </div>
 
-        <div class="space__gallery" aria-label="Fotos do ambiente da Sevvi">
-
-          <div class="space__img" role="img" aria-label="Recepção da Sevvi Clínica Integrada">
-            <div class="space__img-inner">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                <circle cx="8.5" cy="8.5" r="1.5"/>
-                <polyline points="21 15 16 10 5 21"/>
-              </svg>
-              <!-- <img src="foto-recepcao.webp" alt="Recepção acolhedora da Sevvi Clínica Integrada em Campos dos Goytacazes" style="width:100%; height:100%; object-fit:cover;" loading="lazy"> -->
-              <span class="space__img-label">FOTO — RECEPÇÃO</span>
+        <div class="hero-media-wrapper">
+          <div class="media-placeholder hero-placeholder">
+            <i class="fas fa-user-md"></i>
+            <span>[FOTO PROFISSIONAL DRA. MARIANA]</span>
+            <small>Dra. Mariana em ambiente clínico elegante e humanizado (4:5)</small>
+          </div>
+          <div class="hero-badge-floating">
+            <i class="fas fa-heartbeat"></i>
+            <div class="hero-badge-text">
+              <p>Olhar Humano e Estratégico</p>
+              <span>Saúde e bem-estar em sintonia</span>
             </div>
           </div>
-
-          <div class="space__img" role="img" aria-label="Consultório da Sevvi">
-            <div class="space__img-inner">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                <circle cx="8.5" cy="8.5" r="1.5"/>
-                <polyline points="21 15 16 10 5 21"/>
-              </svg>
-              <!-- <img src="foto-consultorio.webp" alt="Consultório premium da Sevvi" style="width:100%; height:100%; object-fit:cover;" loading="lazy"> -->
-              <span class="space__img-label">FOTO — CONSULTÓRIO</span>
-            </div>
-          </div>
-
-          <div class="space__img" role="img" aria-label="Detalhe decorativo da Sevvi">
-            <div class="space__img-inner">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                <circle cx="8.5" cy="8.5" r="1.5"/>
-                <polyline points="21 15 16 10 5 21"/>
-              </svg>
-              <!-- <img src="foto-detalhe.webp" alt="Detalhe do ambiente — plantas e design da Sevvi" style="width:100%; height:100%; object-fit:cover;" loading="lazy"> -->
-              <span class="space__img-label">FOTO — DETALHE</span>
-            </div>
-          </div>
-
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ==========================================
-       LOCALIZAÇÃO
-  =========================================== -->
-  <section class="section-location" id="localizacao" aria-label="Localização da Sevvi Clínica Integrada">
-    <div class="container">
-      <div class="location__grid">
+    <!-- SECTION 2: DOR & DIAGNÓSTICO -->
+    <section class="section-padding section-pain">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Você se identifica?</span>
+          <h2>Você sente que seu corpo travou, mesmo fazendo "tudo certo"?</h2>
+          <p>Muitas vezes o problema não é falta de esforço ou disciplina, mas sim um desequilíbrio silencioso que exames convencionais não conseguem captar de primeira.</p>
+        </div>
 
-        <div>
-          <span class="section-label" aria-hidden="true">Onde encontrar</span>
-          <h2 class="location__headline">Onde encontrar a Sevvi</h2>
-
-          <div class="location__address">
-            <p class="location__address-line">Av. Petrarca, nº 360</p>
-            <p class="location__address-line">Parque Tamandaré</p>
-            <p class="location__address-city">Campos dos Goytacazes — RJ</p>
+        <div class="pain-grid">
+          <div class="pain-card">
+            <div class="pain-icon"><i class="fas fa-weight"></i></div>
+            <h3>Emagrecimento Travado</h3>
+            <p>Você faz dietas restritivas, corta calorias, mas a balança não sai do lugar ou você recupera todo o peso em pouco tempo.</p>
           </div>
 
-          <div class="location__whatsapp">
-            <svg class="location__whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-            </svg>
-            <span>(22) 99850-5103</span>
+          <div class="pain-card">
+            <div class="pain-icon"><i class="fas fa-battery-quarter"></i></div>
+            <h3>Cansaço Crônico</h3>
+            <p>Acorda sem energia, sente fadiga ao longo do dia, depende de café ou doces para se manter alerta e acha que é "normal".</p>
           </div>
 
-          <a href="https://wa.me/5522998505103"
-             target="_blank"
-             rel="noopener noreferrer"
-             class="btn btn--primary"
-             aria-label="Falar com a Sevvi pelo WhatsApp para tirar dúvidas">
-            Falar pelo WhatsApp
+          <div class="pain-card">
+            <div class="pain-icon"><i class="fas fa-sliders-h"></i></div>
+            <h3>Oscilações Hormonais</h3>
+            <p>Mudanças bruscas de humor, retenção de líquido, perda de libido, insônia e alteração de composição corporal pós-30 anos.</p>
+          </div>
+
+          <div class="pain-card">
+            <div class="pain-icon"><i class="fas fa-notes-medical"></i></div>
+            <h3>"Exames Normais"</h3>
+            <p>Seus exames rotineiros apontam que está tudo "dentro da referência", mas você continua não se sentindo bem com seu corpo.</p>
+          </div>
+        </div>
+
+        <div class="pain-banner">
+          <div class="pain-banner-content">
+            <h3>Exame de sangue é uma foto. Seu corpo é um filme.</h3>
+            <p>Na Sevvi, ouvimos os seus sintomas em vez de avaliar apenas papéis. O sintoma é o pedido de socorro do seu metabolismo.</p>
+          </div>
+          <a href="https://wa.me/5522998505103?text=Quero%20entender%20o%20que%20est%C3%A1%20acontecendo%20com%20meu%20metabolismo." class="btn btn-primary" target="_blank" style="white-space: nowrap;">
+            Quero Entender Meu Corpo
           </a>
         </div>
+      </div>
+    </section>
 
-        <div>
-          <div class="location__map" role="region" aria-label="Mapa da localização da Sevvi">
-            <!-- SUBSTITUIR pelo iframe do Google Maps -->
-            <!-- Exemplo:
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!..."
-              width="100%"
-              height="100%"
-              style="border:0; width:100%; height:100%;"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              title="Localização da Sevvi Clínica Integrada — Campos dos Goytacazes, RJ"
-            ></iframe>
-            -->
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
-              <circle cx="12" cy="9" r="2.5"/>
-            </svg>
-            <p class="location__map-label">
-              Av. Petrarca, nº 360<br/>Parque Tamandaré<br/>Campos dos Goytacazes, RJ
-            </p>
-            <a href="https://maps.google.com/?q=Av.+Petrarca+360+Parque+Tamandare+Campos+dos+Goytacazes+RJ"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="location__map-link"
-               aria-label="Abrir localização da Sevvi no Google Maps">
-              Abrir no Google Maps
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
-              </svg>
+    <!-- SECTION 3: ABORDAGEM & PILARES (BIG IDEA) -->
+    <section id="abordagem" class="section-padding section-pillars">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow eyebrow-gold">A Filosofia Sevvi</span>
+          <h2>Emagrecimento não é tentativa e erro. É processo clínico.</h2>
+          <p>Superamos o ciclo frustrante de tratamentos genéricos com um método estruturado em 3 pilares fundamentais.</p>
+        </div>
+
+        <div class="pillars-grid">
+          <div class="pillar-card">
+            <div class="pillar-number">01</div>
+            <h3>Investigação de Causa Raiz</h3>
+            <p>Avaliamos tireoide, saúde intestinal, perfil hormonal, marcadores inflamatórios e carências nutricionais específicas antes de prescrever qualquer conduta.</p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-number">02</div>
+            <h3>Estratégia Integrada</h3>
+            <p>Unimos a precisão da medicina funcional e estética ao suporte nutricional clínico para tratar o organismo como um sistema único e interligado.</p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-number">03</div>
+            <h3>Acompanhamento Contínuo</h3>
+            <p>Você não recebe apenas uma receita para voltar em 6 meses. Oferecemos suporte próximo com intenção, calibrando o tratamento conforme seu corpo responde.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: SERVIÇOS & SOLUÇÕES -->
+    <section id="tratamentos" class="section-padding section-services">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Soluções Personalizadas</span>
+          <h2>Tratamentos focados em saúde real e estética consciente</h2>
+          <p>Cada procedimento e conduta é selecionado sob medida após a sua consulta de avaliação médica.</p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Serviço 1 -->
+          <div class="service-card">
+            <div class="service-header">
+              <span class="service-tag">Metabolismo & Perda de Peso</span>
+              <h3>Programa de Emagrecimento Clínico</h3>
+              <p>Reorganização metabólica completa para queima de gordura eficiente, preservação de massa magra e manutenção sustentável dos resultados.</p>
+            </div>
+            <div class="service-body">
+              <ul class="service-features">
+                <li><i class="fas fa-check"></i> Avaliação da composição corporal completa</li>
+                <li><i class="fas fa-check"></i> Modulação metabólica e controle de picos insulínicos</li>
+                <li><i class="fas fa-check"></i> Suporte farmacológico moderno (quando indicado)</li>
+                <li><i class="fas fa-check"></i> Acompanhamento contínuo da evolução</li>
+              </ul>
+            </div>
+            <a href="https://wa.me/5522998505103?text=Gostaria%20de%20saber%20mais%20sobre%20o%20Emagrecimento%20Cl%C3%ADnico." class="btn btn-secondary btn-full" target="_blank">
+              Saber Mais Sobre Emagrecimento
+            </a>
+          </div>
+
+          <!-- Serviço 2 -->
+          <div class="service-card">
+            <div class="service-header">
+              <span class="service-tag">Equilíbrio & Vitalidade</span>
+              <h3>Modulação Hormonal e Implantes</h3>
+              <p>Restauração dos níveis hormonais adequados para combater o cansaço, recuperar a disposição física e mental, melhorar o sono e o contorno corporal.</p>
+            </div>
+            <div class="service-body">
+              <ul class="service-features">
+                <li><i class="fas fa-check"></i> Acompanhamento rigoroso para mulheres e homens</li>
+                <li><i class="fas fa-check"></i> Avaliação médica detalhada pré e pós-implante</li>
+                <li><i class="fas fa-check"></i> Otimização do bem-estar e controle metabólico</li>
+                <li><i class="fas fa-check"></i> Procedimentos seguros em ambiente clínico</li>
+              </ul>
+            </div>
+            <a href="https://wa.me/5522998505103?text=Gostaria%20de%20saber%20mais%20sobre%20a%20Modula%C3%A7%C3%A3o%20Hormonal." class="btn btn-secondary btn-full" target="_blank">
+              Saber Mais Sobre Hormônios
+            </a>
+          </div>
+
+          <!-- Serviço 3 -->
+          <div class="service-card">
+            <div class="service-header">
+              <span class="service-tag">Nutrição & Saúde Metabólica</span>
+              <h3>Nutrição Clínica e Suplementação</h3>
+              <p>Plano alimentador individualizado ajustado às suas necessidades celulares, corrigindo carências de vitaminas, minerais e otimizando a digestão.</p>
+            </div>
+            <div class="service-body">
+              <ul class="service-features">
+                <li><i class="fas fa-check"></i> Estratégia sem radicalismos ou restrições severas</li>
+                <li><i class="fas fa-check"></i> Prescrição de nutracêuticos e fitoterápicos</li>
+                <li><i class="fas fa-check"></i> Alinhamento direto com a conduta médica</li>
+                <li><i class="fas fa-check"></i> Foco na saúde intestinal e digestiva</li>
+              </ul>
+            </div>
+            <a href="https://wa.me/5522998505103?text=Gostaria%20de%20saber%20mais%20sobre%20a%20Nutri%C3%A7%C3%A3o%20Cl%C3%ADnica." class="btn btn-secondary btn-full" target="_blank">
+              Saber Mais Sobre Nutrição
+            </a>
+          </div>
+
+          <!-- Serviço 4 -->
+          <div class="service-card">
+            <div class="service-header">
+              <span class="service-tag">Terapia Capilar & Estética</span>
+              <h3>Protocolo Hair Boost & Medicina Estética</h3>
+              <p>Tratamentos focados na saúde capilar contra a queda de cabelo e procedimentos estéticos integrados para realçar sua beleza natural.</p>
+            </div>
+            <div class="service-body">
+              <ul class="service-features">
+                <li><i class="fas fa-check"></i> Estímulo do crescimento e fortalecimento do fio</li>
+                <li><i class="fas fa-check"></i> Tecnologia aplicada à saúde do couro cabeludo</li>
+                <li><i class="fas fa-check"></i> Procedimentos estéticos com leveza e naturalidade</li>
+                <li><i class="fas fa-check"></i> Resultados que transparecem de dentro para fora</li>
+              </ul>
+            </div>
+            <a href="https://wa.me/5522998505103?text=Gostaria%20de%20saber%20mais%20sobre%20Terapia%20Capilar%20e%20Est%C3%A9tica." class="btn btn-secondary btn-full" target="_blank">
+              Saber Mais Sobre Estética
             </a>
           </div>
         </div>
-
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ==========================================
-       CTA FINAL
-  =========================================== -->
-  <section class="section-final-cta" aria-label="Convite para agendar avaliação">
-    <div class="container">
-      <div class="final-cta__inner">
-        <p class="final-cta__eyebrow">Próximo passo</p>
-        <h2 class="final-cta__headline">
-          O primeiro passo não é um procedimento.<br/>
-          É <em>uma conversa.</em>
-        </h2>
-        <p class="final-cta__text">
-          Você não precisa saber exatamente o que precisa. Precisa apenas de uma avaliação com quem vai ouvir o que está acontecendo com você de verdade.
-        </p>
-        <a href="https://wa.me/5522998505103"
-           target="_blank"
-           rel="noopener noreferrer"
-           class="btn btn--primary btn--large"
-           aria-label="Agendar avaliação inicial na Sevvi Clínica Integrada pelo WhatsApp">
-          <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-          </svg>
-          Agendar minha avaliação agora
-        </a>
-        <p class="final-cta__quote">
-          Cuidar de você não é um gasto. É uma proteção.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================
-       FOOTER
-  =========================================== -->
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer__inner">
-        <div class="footer__brand">Sevvi Clínica Integrada</div>
-        <div class="footer__info">
-          Av. Petrarca, nº 360 · Parque Tamandaré · Campos dos Goytacazes, RJ<br/>
-          CRM 1361872 ·
-          <a href="https://wa.me/5522998505103" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp da Sevvi">(22) 99850-5103</a> ·
-          <a href="https://www.instagram.com/sevviclinicaintegrada/" target="_blank" rel="noopener noreferrer" aria-label="Instagram da Sevvi">@sevviclinicaintegrada</a>
+    <!-- SECTION 5: PROVA SOCIAL -->
+    <section class="section-padding section-proof">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Resultados Reais</span>
+          <h2>Transformações que começam por dentro e aparecem por fora</h2>
+          <p>Conheça a experiência de quem escolheu cuidar da saúde com acolhimento e estratégia médica.</p>
         </div>
+
+        <div class="proof-grid">
+          <div class="media-placeholder proof-placeholder">
+            <i class="fas fa-smile"></i>
+            <span>[DEPOIMENTO & RESULTADO 01]</span>
+            <small>Foto de paciente sorridente em ambiente acolhedor da Sevvi (4:5)</small>
+          </div>
+          <div class="media-placeholder proof-placeholder">
+            <i class="fas fa-smile"></i>
+            <span>[DEPOIMENTO & RESULTADO 02]</span>
+            <small>Registro de evolução metabólica e disposição (4:5)</small>
+          </div>
+          <div class="media-placeholder proof-placeholder">
+            <i class="fas fa-smile"></i>
+            <span>[DEPOIMENTO & RESULTADO 03]</span>
+            <small>Transformação de contorno corporal e autoestima (4:5)</small>
+          </div>
+        </div>
+
+        <div class="proof-disclaimer">
+          <p><i class="fas fa-info-circle"></i> Cada organismo é único. Os resultados dependem da avaliação médica individualizada, do quadro metabólico inicial e do cumprimento das orientações clínicas propostas.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: SOBRE A EQUIPE E CORPO CLÍNICO -->
+    <section id="equipe" class="section-padding section-about">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Corpo Clínico</span>
+          <h2>Quem conduz a sua jornada de saúde</h2>
+          <p>Profissionais comprometidas com a medicina humanizada, atualização técnica rigorosa e respeito ao seu processo.</p>
+        </div>
+
+        <!-- Médica Responsável -->
+        <div class="about-card">
+          <div class="about-grid">
+            <div class="media-placeholder about-media">
+              <i class="fas fa-user-md"></i>
+              <span>[FOTO DRA. MARIANA]</span>
+              <small>Retrato profissional acolhedor em consultório (1:1)</small>
+            </div>
+            <div class="about-content">
+              <h3>Dra. Mariana</h3>
+              <span class="about-role">Médica Responsável | CRM 1361872</span>
+              <p>Especialista em medicina estética e abordagem integrada da saúde. Acredita que cuidar vai muito além do sintoma pontual: exige escuta atenta, calma e a construção de uma estratégia precisa para que o paciente recupere o controle da sua saúde e autoestima.</p>
+              
+              <ul class="about-credentials">
+                <li><i class="fas fa-certificate"></i> Registro Profissional Ativo (CRM 1361872)</li>
+                <li><i class="fas fa-certificate"></i> Foco em Medicina Integrada, Hormônios e Emagrecimento</li>
+                <li><i class="fas fa-certificate"></i> Atendimento pautado pela ética, individualidade e excelência</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nutricionista -->
+        <div class="about-card" style="margin-bottom: 0;">
+          <div class="about-grid">
+            <div class="media-placeholder about-media">
+              <i class="fas fa-user-nurse"></i>
+              <span>[FOTO DRA. LUMA]</span>
+              <small>Retrato profissional da nutricionista clínica (1:1)</small>
+            </div>
+            <div class="about-content">
+              <h3>Dra. Luma</h3>
+              <span class="about-role">Nutrição Clínica e Otimização Metabólica</span>
+              <p>Especialista em ajustar a alimentação ao estilo de vida real de cada pessoa. Atua em perfeita sintonia com a avaliação médica para garantir que a nutrição seja uma aliada no processo de emagrecimento e reequilíbrio metabólico, sem neuras ou dietas impraticáveis.</p>
+              
+              <ul class="about-credentials">
+                <li><i class="fas fa-apple-alt"></i> Planejamento alimentar 100% personalizado</li>
+                <li><i class="fas fa-apple-alt"></i> Foco em saúde intestinal e controle inflamatório</li>
+                <li><i class="fas fa-apple-alt"></i> Trabalho integrado com a conduta médica da clínica</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 7: O ESPAÇO & AMBIENTE -->
+    <section class="section-padding section-space">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Nosso Espaço</span>
+          <h2>Um ambiente pensado para o seu bem-estar</h2>
+          <p>Cada detalhe da Sevvi foi projetado para oferecer conforto, privacidade e uma experiência acolhedora desde o primeiro minuto.</p>
+        </div>
+
+        <div class="space-grid">
+          <div class="media-placeholder space-placeholder">
+            <i class="fas fa-clinic-medical"></i>
+            <span>[FOTO RECEPÇÃO SEVVI]</span>
+            <small>Ambiente aconchegante com tons neutros e luz warm (16:10)</small>
+          </div>
+          <div class="media-placeholder space-placeholder">
+            <i class="fas fa-stethoscope"></i>
+            <span>[FOTO CONSULTÓRIO MÉDICO]</span>
+            <small>Espaço de atendimento privativo e moderno (16:10)</small>
+          </div>
+          <div class="media-placeholder space-placeholder">
+            <i class="fas fa-spa"></i>
+            <span>[FOTO SALA DE PROCEDIMENTOS]</span>
+            <small>Estratégia e tecnologia aplicada ao cuidado (16:10)</small>
+          </div>
+        </div>
+
+        <div class="space-features">
+          <div class="space-feature-item">
+            <i class="fas fa-leaf"></i> <span>Atmosfera Relaxante e Privativa</span>
+          </div>
+          <div class="space-feature-item">
+            <i class="fas fa-parking"></i> <span>Fácil Acesso no Parque Tamandaré</span>
+          </div>
+          <div class="space-feature-item">
+            <i class="fas fa-coffee"></i> <span>Acolhimento Exclusivo</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: LOCALIZAÇÃO & ATENDIMENTO -->
+    <section id="localizacao" class="section-padding section-location">
+      <div class="container">
+        <div class="location-grid">
+          <div class="location-info">
+            <span class="eyebrow">Atendimento Presencial</span>
+            <h3>Estamos prontos para receber você em Campos dos Goytacazes</h3>
+            <p>Agende sua consulta e venha conhecer nossa estrutura no Parque Tamandaré.</p>
+
+            <ul class="location-details">
+              <li>
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                  <strong>Endereço:</strong><br>
+                  Av. Petrarca nº 360 - Parque Tamandaré<br>
+                  Campos dos Goytacazes - RJ
+                </div>
+              </li>
+              <li>
+                <i class="fab fa-whatsapp"></i>
+                <div>
+                  <strong>WhatsApp para Agendamento:</strong><br>
+                  (22) 99850-5103
+                </div>
+              </li>
+              <li>
+                <i class="fas fa-clock"></i>
+                <div>
+                  <strong>Atendimento:</strong><br>
+                  Segunda a Sexta-feira (mediante agendamento prévio)
+                </div>
+              </li>
+            </ul>
+
+            <a href="https://wa.me/5522998505103?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio%20de%20atendimento." class="btn btn-primary" target="_blank">
+              <i class="fab fa-whatsapp"></i> Falar com a Recepção
+            </a>
+          </div>
+
+          <div class="media-placeholder map-placeholder">
+            <i class="fas fa-map-marked-alt"></i>
+            <span>[MAPA / LOCALIZAÇÃO SEVVI]</span>
+            <small>Localização privilegiada na Av. Petrarca, Parque Tamandaré - Campos dos Goytacazes (4:3)</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 9: CTA FINAL & FAQ -->
+    <section class="section-padding section-cta-final">
+      <div class="container">
+        <div class="cta-final-card">
+          <span class="eyebrow eyebrow-gold">Sua Saúde em Primeiro Lugar</span>
+          <h2>Pronta para dar o primeiro passo em direção ao seu reequilíbrio?</h2>
+          <p>Não espere os sintomas se intensificarem. Agende sua consulta de avaliação e descubra o que uma medicina humanizada e estratégica pode fazer por você.</p>
+
+          <a href="https://wa.me/5522998505103?text=Ol%C3%A1!%20Quero%20agendar%20minha%20consulta%20de%20avalia%C3%A7%C3%A3o%20integrada." class="btn btn-whatsapp pulse-effect" style="padding: 1.25rem 2.5rem; font-size: 1.1rem;" target="_blank">
+            <i class="fab fa-whatsapp" style="font-size: 1.4rem;"></i>
+            <span>AGENDAR AVALIAÇÃO PELO WHATSAPP</span>
+          </a>
+        </div>
+
+        <!-- FAQ ACCORDION -->
+        <div class="faq-container">
+          <h3 class="faq-title">Dúvidas Frequentes</h3>
+
+          <div class="faq-item active">
+            <div class="faq-question">
+              <span>Como funciona a primeira consulta na Sevvi?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              A primeira consulta é uma investigação profunda do seu histórico de saúde, estilo de vida, sintomas atuais e objetivos. Realizamos uma escuta atenta e solicitamos ou analisamos exames específicos para mapear seu metabolismo de forma completa antes de definir a conduta.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>A clínica aceita convênios médicos?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              Nossos atendimentos são exclusivamente particulares, o que nos permite dedicar o tempo necessário a cada paciente com calma e sem limites impostos por operadoras. No entanto, fornecemos nota fiscal para que você possa solicitar o reembolso junto ao seu plano de saúde, caso ele ofereça essa opção.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Quais problemas posso tratar na Sevvi?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              Tratamos emagrecimento resistente, fadiga e falta de energia, desequilíbrios hormonais, alterações de libido e sono, desaceleração metabólica, queda capilar e necessidades de rejuvenescimento estético consciente.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Onde a clínica está localizada?</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              Estamos localizados na Av. Petrarca nº 360, no bairro Parque Tamandaré, em Campos dos Goytacazes - RJ.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <span class="footer-logo">SEVVI CLÍNICA INTEGRADA</span>
+          <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">
+            Onde saúde e bem-estar caminham juntos. Tratamentos clínicos e personalizados com olhar humano, leveza e excelência médica em Campos dos Goytacazes.
+          </p>
+        </div>
+
+        <div>
+          <strong style="color: #FFF; display: block; margin-bottom: 1rem;">Navegação</strong>
+          <p><a href="#abordagem" style="color: inherit; text-decoration: none;">Abordagem</a></p>
+          <p><a href="#tratamentos" style="color: inherit; text-decoration: none;">Tratamentos</a></p>
+          <p><a href="#equipe" style="color: inherit; text-decoration: none;">Corpo Clínico</a></p>
+          <p><a href="#localizacao" style="color: inherit; text-decoration: none;">Localização</a></p>
+        </div>
+
+        <div>
+          <strong style="color: #FFF; display: block; margin-bottom: 1rem;">Contato</strong>
+          <p><i class="fab fa-whatsapp"></i> (22) 99850-5103</p>
+          <p><i class="fab fa-instagram"></i> @sevviclinicaintegrada</p>
+          <p><i class="fas fa-id-card"></i> CRM 1361872</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Sevvi Clínica Integrada. Todos os direitos reservados. CRM 1361872.</p>
+        <p>Desenvolvido para alta conversão médica e experiência do paciente.</p>
       </div>
     </div>
   </footer>
 
-  <!-- ==========================================
-       FLOATING WHATSAPP BUTTON (mobile)
-  =========================================== -->
-  <a href="https://wa.me/5522998505103"
-     target="_blank"
-     rel="noopener noreferrer"
-     class="float-wa"
-     aria-label="Contato pelo WhatsApp — Sevvi Clínica Integrada"
-     role="button">
-    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-    </svg>
+  <!-- FLOATING WHATSAPP BUTTON (MOBILE) -->
+  <a href="https://wa.me/5522998505103?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." class="floating-whatsapp" target="_blank" aria-label="Contato via WhatsApp">
+    <i class="fab fa-whatsapp"></i>
   </a>
 
-  <!-- ==========================================
-       JAVASCRIPT MÍNIMO
-  =========================================== -->
+  <!-- JS SCRIPT FOR ACCORDION -->
   <script>
-    // Header scroll state
-    (function() {
-      var header = document.querySelector('.header');
-      if (!header) return;
-      var ticking = false;
-
-      function onScroll() {
-        if (!ticking) {
-          requestAnimationFrame(function() {
-            if (window.scrollY > 10) {
-              header.style.boxShadow = '0 2px 20px rgba(44, 41, 34, 0.08)';
-            } else {
-              header.style.boxShadow = 'none';
-            }
-            ticking = false;
-          });
-          ticking = true;
-        }
-      }
-
-      window.addEventListener('scroll', onScroll, { passive: true });
-    })();
-
-    // Scroll suave para âncoras internas
-    (function() {
-      var anchors = document.querySelectorAll('a[href^="#"]');
-      anchors.forEach(function(anchor) {
-        anchor.addEventListener('click', function(e) {
-          var targetId = this.getAttribute('href');
-          if (targetId === '#') return;
-          var target = document.querySelector(targetId);
-          if (target) {
-            e.preventDefault();
-            var headerH = document.querySelector('.header').offsetHeight || 68;
-            var top = target.getBoundingClientRect().top + window.scrollY - headerH - 20;
-            window.scrollTo({ top: top, behavior: 'smooth' });
+    document.addEventListener('DOMContentLoaded', function() {
+      const faqItems = document.querySelectorAll('.faq-item');
+      
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+          const isActive = item.classList.contains('active');
+          
+          // Close all
+          faqItems.forEach(faq => faq.classList.remove('active'));
+          
+          // Open clicked if not previously active
+          if (!isActive) {
+            item.classList.add('active');
           }
         });
       });
-    })();
+    });
   </script>
-
 </body>
 </html>
