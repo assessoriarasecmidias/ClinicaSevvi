@@ -348,7 +348,7 @@
       color: var(--brand-olive);
     }
 
-    /* Placeholder styling */
+    /* Placeholder styling / Image container */
     .media-placeholder {
       width: 100%;
       background-color: var(--bg-subtle);
@@ -384,6 +384,17 @@
       font-size: 0.75rem;
       color: var(--text-muted);
       margin-top: 0.5rem;
+    }
+
+    /* Estilo para a foto real encaixada */
+    .real-photo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: inherit;
     }
 
     .hero-media-wrapper {
@@ -1054,9 +1065,8 @@
 
         <div class="hero-media-wrapper">
           <div class="media-placeholder hero-placeholder">
-            <i class="fas fa-user-md"></i>
-            <span>[FOTO PROFISSIONAL DRA. MARIANA]</span>
-            <small>Dra. Mariana em ambiente clínico elegante e humanizado (4:5)</small>
+            <!-- FOTO INSERIDA AQUI -->
+            <img src="URL_DA_FOTO_DA_DRA_MARIANA_AQUI.jpg" alt="Dra. Mariana" class="real-photo">
           </div>
           <div class="hero-badge-floating">
             <i class="fas fa-heartbeat"></i>
